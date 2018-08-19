@@ -6,5 +6,32 @@
     border-radius: 0.5rem;
     width: 450px;
     height: 300px;
-    opacity: 0.75
+    display: grid;
+    grid-template-rows: 100px 1fr 100px;
+}
+
+.contentArea {
+    display: grid;
+    grid-row: 2 / 3;
+    grid-auto-flow: column;
+}
+
+.menuItem  {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    grid-template-rows: 60px 20px;
+}
+
+.menuItem > button {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.menuItem > label {
+    grid-column: 1 / 4;
+    grid-row: 2 / 3;
+    text-align: center;
+    color: white;
+    font-family: consolas;
+    text-transform: uppercase;
 }

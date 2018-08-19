@@ -1,0 +1,36 @@
+.galvice {  
+    width: 600px;
+    height: 300px;
+    background-color: brown;
+    display: grid;
+    border-radius: 1rem;
+    /* grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(10, 1fr); */
+    grid-template-areas:
+    " . . . . . . . . . . . . . . . . . . . . "
+    " . . . . . . . . . . . . . . . . . . . . "
+    " . s s s s s s . . . . . . . . . . . b . "
+    " . s s s s s s . . . . . . . . . . . b . "
+    " . s s s s s s . . . . . . . . . . . b . "
+    " . s s s s s s . . . . . . . . . . . b . "
+    " . s s s s s s . . . . . . . . . . . b . "
+    " . s s s s s s . . . . . . . . . . . b . "
+    " . . . . . . . . . . . . . . . . . . . . "
+    " . . . . . . . . . . . . . . . . . . . . ";
+
+    
+}
+
+.screen {
+    background-color: #bee0a1;
+    font-family: consolas;
+    background-image:url(images/gridvice.png);
+    grid-area: s;
+}
+
+.btnVice {
+    grid-area: b;
+    display: grid;
+    width: 20px;
+    row-gap: 3px;
+}

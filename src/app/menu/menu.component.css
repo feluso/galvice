@@ -1,0 +1,10 @@
+.menu {
+    background-color: #1e71b5;
+    border-style: solid;
+    border-color: gainsboro;
+    border-width: 1px;
+    border-radius: 0.5rem;
+    width: 450px;
+    height: 300px;
+    opacity: 0.75
+}

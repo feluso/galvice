@@ -34,3 +34,13 @@
     width: 20px;
     row-gap: 3px;
 }
+
+.btnVice > a {
+    background-color: gainsboro;
+}
+
+.absoluteContainer {
+    position: relative;
+    top: 100px;
+    right: 50%;
+}

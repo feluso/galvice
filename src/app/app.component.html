@@ -1,23 +1,23 @@
-<div class="container">
-  <div class="row align-items-center mx-auto">
-    <div class="galvice">
-      <div class="screen">
-      </div>
-      <div class="btnVice">
+<div class="galcontainer">
+  <div class="galvice">
+    <div class="screen">
 
-        <button class="button" (click)="1"></button>
-
-
-        <button class="button" (click)="1"></button>
-
-
-        <a routerLink="/info"></a>
-
-      </div>
+      <img src="assets/images/at.gif" alt="">
     </div>
-    <div class="absoluteContainer">
-      <router-outlet></router-outlet>
+    <div class="btnVice">
+
+      <button class="button" (click)="1"></button>
+
+
+      <button class="button" (click)="1"></button>
+
+
+      <a routerLink="/menu"></a>
+
     </div>
   </div>
-
+  <div class="absoluteContainer">
+    <router-outlet></router-outlet>
+    <router-outlet name="popup"></router-outlet>
+  </div>
 </div>

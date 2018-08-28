@@ -1,10 +1,4 @@
 .menu {
-    background-color: rgb(30, 113, 181);
-    background-color: rgba(30, 113, 181, 0.9);
-    border-style: solid;
-    border-color: gainsboro;
-    border-width: 1px;
-    border-radius: 0.5rem;
     width: 450px;
     display: grid;
     grid-template-rows: 75px 1fr 75px;
@@ -35,6 +29,12 @@
 .menuItem > button {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+}
+
+.menuItem > a {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    background: gainsboro;
 }
 
 .menuItem > label {

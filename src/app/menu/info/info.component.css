@@ -1,5 +1,30 @@
-.modalVice {
-    background-color: rgb(30, 113, 181);
-    background-color: rgba(30, 113, 181, 0.9);
- 
+.containerInfo {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translateY(-50%);
+    display: grid;
+    grid-template-columns: 8fr 1fr;
 }
+
+.modalInfo {
+    padding: 1em 1em 1em 0.5em;
+    border-radius: 0.5em 0 0 0.5em;
+}
+
+.tab {
+    text-orientation: sideways;
+    writing-mode: vertical-rl;
+    border-left: 0px;
+    
+    font-family: consolas;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tab > div {
+    border-radius: 0px 20px 0px 0px;
+    padding-bottom: 5px;
+    text-align: end;
+}
+

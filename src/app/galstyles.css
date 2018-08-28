@@ -1,3 +1,14 @@
-h1 {
-    font-family: 'Consolas'
+h1, p {
+    font-family: 'Consolas';
+    color: gainsboro;
+}
+
+.modalVice {
+    background-color: rgb(18, 56, 123);
+    background-color: rgba(18, 56, 123, 0.9);
+    border-style: solid;
+    border-color: gainsboro;
+    border-width: 1px;
+    border-radius: 0.5rem;
+    color: gainsboro;
 }

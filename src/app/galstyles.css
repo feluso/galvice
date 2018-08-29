@@ -12,3 +12,11 @@ h1, p {
     border-radius: 0.5rem;
     color: gainsboro;
 }
+
+a {
+    color: orange;
+}
+
+a:hover {
+    color: greenyellow;
+}

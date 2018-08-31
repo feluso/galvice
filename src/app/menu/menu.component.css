@@ -34,7 +34,11 @@
 .menuItem > a {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    background: gainsboro;
+}
+
+.menuItem > a > img {
+    width: 100%;
+    image-rendering: pixelated;
 }
 
 .menuItem > label {

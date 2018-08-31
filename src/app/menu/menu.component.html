@@ -4,15 +4,21 @@
     </div>
     <div class="contentArea">
         <div class="menuItem">
-            <button></button>
+            <a [routerLink]="['/', { outlets: {popup: ['info'] } } ]">
+                <img src="assets/images/about.gif" alt="">
+            </a>
             <label>Info</label>
         </div>
         <div class="menuItem">
-            <button></button>
+                <a [routerLink]="['/', { outlets: {popup: ['info'] } } ]">
+                    <img src="assets/images/experience.gif" alt="">
+                </a>
             <label>Experience</label>
         </div>
         <div class="menuItem">
-            <a [routerLink]="['/', { outlets: {popup: ['info'] } } ]"></a>
+                <a [routerLink]="['/', { outlets: {popup: ['info'] } } ]">
+                    <img src="assets/images/cv.gif" alt="">
+                </a>
             <label>CV</label>
         </div>
     </div>

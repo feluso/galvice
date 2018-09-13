@@ -4,7 +4,7 @@
     left: 25%;
     transform: translateY(-50%);
     display: grid;
-    grid-template-columns: 8fr 1fr;
+    grid-template-columns: 8fr 1fr 10fr ;
 }
 
 .modalInfo {

@@ -6,8 +6,11 @@
     </p>
   </div>
   <div class="tab">
-    <div class="modalVice"> <a href=""> ABOUT</a></div>
+    <div class="modalVice"> <a (click)="expand(1)"> ABOUT</a></div>
     <div class="modalVice"><a href="">SKILLS</a></div>
     <div class="modalVice"><a href="">CONTACT</a></div>
   </div>
+  <!-- <div class="expand"> -->
+    <app-info-tab *ngIf="toExpand==1"></app-info-tab>
+  <!-- </div> -->
 </div>

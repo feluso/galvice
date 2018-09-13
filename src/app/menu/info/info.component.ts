@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
+  public toExpand: Number;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  expand (toExpand: Number) : void {
+    this.toExpand = toExpand;
   }
 
 }

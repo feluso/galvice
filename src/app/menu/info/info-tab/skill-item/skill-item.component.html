@@ -1,6 +1,15 @@
 <div class="skillItem">
   <p>
-    Skill Test
+    {{skill.name}}
   </p>
-  <div *ngFor="let level of levels; let i=index">*</div>
+  <div class="skillBar">
+    <div class="skillLevel" *ngFor="let hasLevel of hasLevels;">
+      <ng-template [ngIf]="hasLevel==true" [ngIfElse]="doesntHaveLevel">
+        <div class="hasLevel"></div>
+      </ng-template>
+      <ng-template #doesntHaveLevel>
+        <div class="hasNoLevel"></div>
+      </ng-template>
+    </div>
+  </div>
 </div>

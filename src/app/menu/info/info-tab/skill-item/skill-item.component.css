@@ -13,3 +13,25 @@ p {
 div {
     text-align: center;
 }
+
+.skillBar {
+    grid-row: 2 / 3;
+    grid-column: 1 / 4;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-auto-flow: column;
+}
+
+.hasLevel {
+    background-color: white;
+    width:95%;
+    height: 80%;
+    transform: skew(-10deg, 0deg);
+}
+
+.hasNoLevel{
+    background-color: black;
+    width:  95%;
+    height: 80%;
+    transform: skew(-10deg, 0deg);
+}

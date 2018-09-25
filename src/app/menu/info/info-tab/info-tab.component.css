@@ -1,3 +1,13 @@
 .skillView {
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+}
+
+.skillGroup {
+    grid-column: 1 / 4; 
+    text-align: left;
+}
+
+app-skill-item {
+    padding: 10px;
 }

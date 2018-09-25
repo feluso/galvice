@@ -2,8 +2,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr ;
     grid-template-rows: 20px 20px;
-    width: 100px;
+    min-width: 100px;
 }
+
 
 p {
     grid-column: 1 / 4; 
@@ -25,13 +26,13 @@ div {
 .hasLevel {
     background-color: white;
     width:95%;
-    height: 80%;
+    height: 50%;
     transform: skew(-10deg, 0deg);
 }
 
 .hasNoLevel{
-    background-color: black;
+    background-color: #727272;
     width:  95%;
-    height: 80%;
+    height: 50%;
     transform: skew(-10deg, 0deg);
 }

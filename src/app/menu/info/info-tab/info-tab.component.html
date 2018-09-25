@@ -1,5 +1,5 @@
 <div class="modalVice skillView">
-    <div *ngFor="let skill of skills">
-        <app-skill-item [skill]="skill"></app-skill-item>
-    </div>
+
+    <app-skill-item *ngFor="let skill of skills" [skill]="skill" [ngClass]="{'skillGroup' : skill.group}"></app-skill-item>
+
 </div>

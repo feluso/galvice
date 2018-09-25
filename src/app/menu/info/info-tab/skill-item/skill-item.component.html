@@ -1,15 +1,17 @@
-<div class="skillItem">
+<div class="skillItem" [ngClass]="{'skillGroup' : skill.group}">
   <p>
     {{skill.name}}
   </p>
   <div class="skillBar">
     <div class="skillLevel" *ngFor="let hasLevel of hasLevels;">
-      <ng-template [ngIf]="hasLevel==true" [ngIfElse]="doesntHaveLevel">
-        <div class="hasLevel"></div>
-      </ng-template>
-      <ng-template #doesntHaveLevel>
-        <div class="hasNoLevel"></div>
-      </ng-template>
+      <ng-container *ngIf="skill.measureable">
+        <ng-template [ngIf]="hasLevel==true" [ngIfElse]="doesntHaveLevel">
+          <div class="hasLevel"></div>
+        </ng-template>
+        <ng-template #doesntHaveLevel>
+          <div class="hasNoLevel"></div>
+        </ng-template>
+      </ng-container>
     </div>
   </div>
 </div>

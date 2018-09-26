@@ -25,14 +25,14 @@ div {
 
 .hasLevel {
     background-color: white;
-    width:95%;
+    width:90%;
     height: 50%;
-    transform: skew(-10deg, 0deg);
+    transform: skew(-20deg, 0deg);
 }
 
 .hasNoLevel{
     background-color: #727272;
-    width:  95%;
+    width:  90%;
     height: 50%;
-    transform: skew(-10deg, 0deg);
+    transform: skew(-20deg, 0deg);
 }

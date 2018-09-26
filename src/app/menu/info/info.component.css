@@ -4,7 +4,7 @@
     left: 25%;
     transform: translateY(-50%);
     display: grid;
-    grid-template-columns: 8fr 1fr 10fr ;
+    grid-template-columns: 8fr 1fr 15fr ;
 }
 
 .modalInfo {
@@ -19,7 +19,11 @@
     
     font-family: consolas;
     display: grid;
+    
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
     grid-template-columns: 1fr 1fr 1fr;
+    z-index: 2;
 }
 
 .tab > div {
@@ -28,3 +32,9 @@
     text-align: end;
 }
 
+app-info-tab {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    z-index: 1;
+    
+}

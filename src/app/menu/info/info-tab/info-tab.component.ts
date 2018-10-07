@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Skill } from '../../../../model/skill.model';
+import { DataRetrieval } from '../../../http/data-retrieval.service';
 
 @Component({
   selector: 'app-info-tab',
@@ -12,9 +13,15 @@ export class InfoTabComponent implements OnInit {
 
   ]
 
-  constructor() { }
+  constructor(private data: DataRetrieval) { }
 
   ngOnInit() {
+    this.data.getSkills().subscribe(
+      (skills : Skill[]) => {
+        this.skills = skills;
+      }
+    )
+
   }
 
 }

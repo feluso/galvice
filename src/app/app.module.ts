@@ -8,6 +8,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { InfoComponent } from './menu/info/info.component';
 import { InfoTabComponent } from './menu/info/info-tab/info-tab.component';
 import { SkillItemComponent } from './menu/info/info-tab/skill-item/skill-item.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DataRetrieval } from './http/data-retrieval.service';
 
 const routes : Routes = [
   { path: 'info', component: InfoComponent, outlet: 'popup' }, 
@@ -24,9 +26,10 @@ const routes : Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataRetrieval],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

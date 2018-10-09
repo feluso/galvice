@@ -3,9 +3,9 @@ import { Skill } from '../../../../model/skill.model';
 import { DataRetrieval } from '../../../http/data-retrieval.service';
 
 @Component({
-  selector: 'app-info-tab',
-  templateUrl: './info-tab.component.html',
-  styleUrls: ['./info-tab.component.css']
+  selector: 'app-skills-tab',
+  templateUrl: './skills-tab.component.html',
+  styleUrls: ['./skills-tab.component.css']
 })
 export class InfoTabComponent implements OnInit {
 

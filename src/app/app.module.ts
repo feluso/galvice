@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule, Routes } from '@angular/router';
 import { InfoComponent } from './menu/info/info.component';
-import { InfoTabComponent } from './menu/info/info-tab/info-tab.component';
-import { SkillItemComponent } from './menu/info/info-tab/skill-item/skill-item.component';
+import { InfoTabComponent } from './menu/info/skills-tab/skills-tab.component';
+import { SkillItemComponent } from './menu/info/skills-tab/skill-item/skill-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataRetrieval } from './http/data-retrieval.service';
+import { AboutTabComponent } from './menu/info/about-tab/about-tab.component';
 
 const routes : Routes = [
   { path: 'info', component: InfoComponent, outlet: 'popup' }, 
@@ -22,7 +23,8 @@ const routes : Routes = [
     MenuComponent,
     InfoComponent,
     InfoTabComponent,
-    SkillItemComponent
+    SkillItemComponent,
+    AboutTabComponent
   ],
   imports: [
     BrowserModule,

@@ -8,9 +8,10 @@
   <div class="tab">
     <div class="modalVice"><a (click)="expand(tab.ABOUT)">ABOUT</a></div>
     <div class="modalVice"><a (click)="expand(tab.SKILLS)">SKILLS</a></div>
-    <div class="modalVice"><a href="">CONTACT</a></div>
+    <div class="modalVice"><a (click)="expand(tab.CONTACT)">CONTACT</a></div>
   </div>
 
   <app-skills-tab *ngIf="tabToExpand==tab.SKILLS"></app-skills-tab>
   <app-about-tab *ngIf="tabToExpand==tab.ABOUT"></app-about-tab>
+  <app-contact-tab *ngIf="tabToExpand==tab.CONTACT"></app-contact-tab>
 </div>

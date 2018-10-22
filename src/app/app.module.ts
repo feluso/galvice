@@ -11,10 +11,11 @@ import { SkillItemComponent } from './menu/info/skills-tab/skill-item/skill-item
 import { HttpClientModule } from '@angular/common/http';
 import { DataRetrieval } from './http/data-retrieval.service';
 import { AboutTabComponent } from './menu/info/about-tab/about-tab.component';
+import { ContactTabComponent } from './menu/info/contact-tab/contact-tab.component';
 
 const routes : Routes = [
-  { path: 'info', component: InfoComponent, outlet: 'popup' }, 
-  { path: 'menu', component: MenuComponent }, 
+  { path: 'info', component: InfoComponent, outlet: 'popup' },
+  { path: 'menu', component: MenuComponent },
 ];
 
 @NgModule({
@@ -24,7 +25,8 @@ const routes : Routes = [
     InfoComponent,
     InfoTabComponent,
     SkillItemComponent,
-    AboutTabComponent
+    AboutTabComponent,
+    ContactTabComponent
   ],
   imports: [
     BrowserModule,

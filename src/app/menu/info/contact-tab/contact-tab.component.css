@@ -1,0 +1,16 @@
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+    grid-gap: 1em
+}
+
+.contactPair {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#message-pair {
+    grid-column: 1 / 3;
+}
+

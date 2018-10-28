@@ -12,8 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { DataRetrieval } from './http/data-retrieval.service';
 import { AboutTabComponent } from './menu/info/about-tab/about-tab.component';
 import { ContactTabComponent } from './menu/info/contact-tab/contact-tab.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
-const routes : Routes = [
+const routes: Routes = [
   { path: 'info', component: InfoComponent, outlet: 'popup' },
   { path: 'menu', component: MenuComponent },
 ];
@@ -31,7 +32,8 @@ const routes : Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [DataRetrieval],
   bootstrap: [AppComponent]

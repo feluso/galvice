@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-enum tab { INFO = 0, SKILLS, CONTACT }
+enum tab {NONE, INFO, SKILLS, CONTACT }
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
@@ -9,7 +9,7 @@ enum tab { INFO = 0, SKILLS, CONTACT }
 export class InfoComponent implements OnInit {
 
   public tab = tab;
-  public tabToExpand: tab;
+  public tabToExpand: tab = tab.NONE;
 
 
   constructor() { }

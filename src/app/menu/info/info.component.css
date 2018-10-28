@@ -1,11 +1,22 @@
-.containerInfo {
+.resizable-grid {
     position: absolute;
     top: 50%;
     left: 25%;
     transform: translateY(-50%);
     display: grid;
-    grid-template-columns: 8fr 1fr 15fr ;
+    grid-template-columns: 15em 1fr;
+    grid-template-rows: 18em 1fr;
 }
+
+.containerInfo {
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+}
+
+.expanded-tab-grid {
+    width: 32em;
+}
+
 
 .modalInfo {
     padding: 1em 1em 1em 0.5em;

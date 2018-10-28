@@ -14,3 +14,7 @@
     grid-column: 1 / 3;
 }
 
+button {
+    position: relative;
+    left: 90%;
+}

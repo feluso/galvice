@@ -15,7 +15,7 @@ export class SkillItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    for (let level = 0; level <= this.maxLevel; level++) {
+    for (let level = 1; level <= this.maxLevel; level++) {
       if (level <= this.skill.level) {
         this.hasLevels[level - 1] = true;
       } else {

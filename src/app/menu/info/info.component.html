@@ -6,15 +6,15 @@
       <p>Development Analyst <br> Test Number <br> email@test.com <br> Linkedin Test
       </p>
     </div>
-    <div class="tab">
-      <div class="modalVice"><a (click)="expand(tab.ABOUT)">ABOUT</a></div>
-      <div class="modalVice"><a (click)="expand(tab.SKILLS)">SKILLS</a></div>
-      <div class="modalVice"><a (click)="expand(tab.CONTACT)">CONTACT</a></div>
-    </div>
   </div>
   <div class="expanded-tab-grid">
-    <app-skills-tab *ngIf="tabToExpand==tab.SKILLS"></app-skills-tab>
+    <div class="modalVice tab-content"><app-skills-tab *ngIf="tabToExpand==tab.SKILLS"></app-skills-tab>
     <app-about-tab *ngIf="tabToExpand==tab.ABOUT"></app-about-tab>
-    <app-contact-tab *ngIf="tabToExpand==tab.CONTACT"></app-contact-tab>
+    <app-contact-tab *ngIf="tabToExpand==tab.CONTACT"></app-contact-tab></div>
+    <div class="tab">
+      <div class="modalVice" [ngClass]="{'inactive-tab' : tabToExpand!=tab.ABOUT}"><a (click)="expand(tab.ABOUT)">ABOUT</a></div>
+      <div class="modalVice" [ngClass]="{'inactive-tab' : tabToExpand!=tab.SKILLS}"><a (click)="expand(tab.SKILLS)">SKILLS</a></div>
+      <div class="modalVice" [ngClass]="{'inactive-tab' : tabToExpand!=tab.CONTACT}"><a (click)="expand(tab.CONTACT)">CONTACT</a></div>
+    </div>
   </div>
 </div>

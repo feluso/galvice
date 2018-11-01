@@ -1,5 +1,4 @@
 h1, p {
-    font-family: 'Consolas';
     color: gainsboro;
 }
 
@@ -19,4 +18,15 @@ a {
 
 a:hover {
     color: greenyellow;
+}
+
+body {
+    font-family: 'Consolas', 'Roboto', 'Courier New', Courier, monospace;
+}
+
+.toolbarArea > a {
+    color: white;
+    right: 2%;
+    position: absolute;
+    cursor: pointer;
 }

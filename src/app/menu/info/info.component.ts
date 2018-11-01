@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
-enum tab {ABOUT, SKILLS, CONTACT }
+enum tab { ABOUT, SKILLS, CONTACT }
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
@@ -12,13 +13,26 @@ export class InfoComponent implements OnInit {
   public tabToExpand: tab = tab.ABOUT;
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
   expand(tabToExpand: tab): void {
     this.tabToExpand = tabToExpand;
+  }
+
+  routeToParent(): void {
+    this.router.navigate(
+      [
+        {
+          outlets: {
+            popup: null
+          }
+        }
+      ],
+
+    )
   }
 
 }

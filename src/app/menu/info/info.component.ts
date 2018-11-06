@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DataRetrieval } from '../../http/data-retrieval.service';
 import { Me } from '../../../model/me.model';
+import { Router } from '@angular/router';
 
-enum tab {ABOUT, SKILLS, CONTACT }
+enum tab { ABOUT, SKILLS, CONTACT }
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
@@ -15,7 +16,7 @@ export class InfoComponent implements OnInit {
   public me: Me[] = [new Me('Test', 'Test@email', 123456789)];
 
 
-  constructor(private data: DataRetrieval) { }
+  constructor(private data: DataRetrieval, private router: Router) { }
 
   ngOnInit() {
     this.data.getMe().subscribe(
@@ -27,6 +28,19 @@ export class InfoComponent implements OnInit {
 
   expand(tabToExpand: tab): void {
     this.tabToExpand = tabToExpand;
+  }
+
+  routeToParent(): void {
+    this.router.navigate(
+      [
+        {
+          outlets: {
+            popup: null
+          }
+        }
+      ],
+
+    );
   }
 
 }

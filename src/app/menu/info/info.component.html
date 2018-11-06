@@ -8,7 +8,11 @@
     </div>
   </div>
   <div class="expanded-tab-grid">
-    <div class="modalVice tab-content"><app-skills-tab *ngIf="tabToExpand==tab.SKILLS"></app-skills-tab>
+    <div class="modalVice tab-content">
+        <div class="toolbarArea">
+            <a (click)="routeToParent()">x</a>
+        </div>
+      <app-skills-tab *ngIf="tabToExpand==tab.SKILLS"></app-skills-tab>
     <app-about-tab *ngIf="tabToExpand==tab.ABOUT"></app-about-tab>
     <app-contact-tab *ngIf="tabToExpand==tab.CONTACT"></app-contact-tab></div>
     <div class="tab">

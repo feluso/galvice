@@ -9,18 +9,16 @@ import { DataRetrieval } from '../../../http/data-retrieval.service';
 })
 export class InfoTabComponent implements OnInit {
 
-  skills: Skill[] = [
-
-  ]
+  skills: Skill[] = [];
 
   constructor(private data: DataRetrieval) { }
 
   ngOnInit() {
     this.data.getSkills().subscribe(
-      (skills : Skill[]) => {
+      (skills: Skill[]) => {
         this.skills = skills;
       }
-    )
+    );
 
   }
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataRetrieval } from '../../http/data-retrieval.service';
+import { Me } from '../../../model/me.model';
 
 enum tab {ABOUT, SKILLS, CONTACT }
 @Component({
@@ -10,11 +12,17 @@ export class InfoComponent implements OnInit {
 
   public tab = tab;
   public tabToExpand: tab = tab.ABOUT;
+  public me: Me[] = [new Me('Test', 'Test@email', 123456789)];
 
 
-  constructor() { }
+  constructor(private data: DataRetrieval) { }
 
   ngOnInit() {
+    this.data.getMe().subscribe(
+      (me: Me[]) => {
+        this.me = me;
+      }
+    );
   }
 
   expand(tabToExpand: tab): void {

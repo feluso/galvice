@@ -4,7 +4,7 @@
   </p>
   <div class="skillBar">
     <div class="skillLevel" *ngFor="let hasLevel of hasLevels;">
-      <ng-container *ngIf="skill.measurable">
+      <ng-container *ngIf="skill.measureable">
         <ng-template [ngIf]="hasLevel==true" [ngIfElse]="doesntHaveLevel">
           <div class="hasLevel"></div>
         </ng-template>

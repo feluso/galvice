@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { DataRetrieval } from '../../http/data-retrieval.service';
 import { Me } from '../../../model/me.model';
 import { Router } from '@angular/router';
+import { SocialMedia } from '../../../model/social-media.model';
+import { map } from 'rxjs/operators';
 
 enum tab { ABOUT, SKILLS, CONTACT }
 @Component({
@@ -14,6 +16,7 @@ export class InfoComponent implements OnInit {
   public tab = tab;
   public tabToExpand: tab = tab.ABOUT;
   public me: Me[] = [new Me('Test', 'Test@email', 123456789)];
+  public socialMedia: SocialMedia[] = [];
 
 
   constructor(private data: DataRetrieval, private router: Router) { }
@@ -22,6 +25,12 @@ export class InfoComponent implements OnInit {
     this.data.getMe().subscribe(
       (me: Me[]) => {
         this.me = me;
+      }
+    );
+    this.data.getSocialMedia().subscribe(
+      (socialMedia) => {
+        this.socialMedia = socialMedia;
+        console.log(socialMedia);
       }
     );
   }

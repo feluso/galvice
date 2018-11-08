@@ -2,19 +2,28 @@
   <div class="containerInfo">
     <div class="modalVice modalInfo">
       <h1> {{me.name}} </h1>
-      <br> <br> <br>
-      <p>Development Analyst <br> {{me.number}} <br> {{me.email}} <br> Linkedin Test
+      <br>
+      <br>
+      <br>
+      <p>
+        Development Analyst <br>
+        {{me.number}} <br>
+        {{me.email}} <br> 
       </p>
+        <div *ngFor="let socialSite of socialMedia">
+            {{socialSite.icon}} {{socialSite.user}} 
+        </div>
     </div>
   </div>
   <div class="expanded-tab-grid">
     <div class="modalVice tab-content">
-        <div class="toolbarArea">
-            <a (click)="routeToParent()">x</a>
-        </div>
+      <div class="toolbarArea">
+        <a (click)="routeToParent()">x</a>
+      </div>
       <app-skills-tab *ngIf="tabToExpand==tab.SKILLS"></app-skills-tab>
-    <app-about-tab *ngIf="tabToExpand==tab.ABOUT"></app-about-tab>
-    <app-contact-tab *ngIf="tabToExpand==tab.CONTACT"></app-contact-tab></div>
+      <app-about-tab *ngIf="tabToExpand==tab.ABOUT"></app-about-tab>
+      <app-contact-tab *ngIf="tabToExpand==tab.CONTACT"></app-contact-tab>
+    </div>
     <div class="tab">
       <div class="modalVice" [ngClass]="{'inactive-tab' : tabToExpand!=tab.ABOUT}"><a (click)="expand(tab.ABOUT)">ABOUT</a></div>
       <div class="modalVice" [ngClass]="{'inactive-tab' : tabToExpand!=tab.SKILLS}"><a (click)="expand(tab.SKILLS)">SKILLS</a></div>

@@ -4,12 +4,4 @@ export class Me {
     readonly number: number;
     readonly description: string;
 
-    constructor(name?: string, email?: string, number?: number, description?: string) {
-        this.name = name;
-        this.email = email;
-        this.number = number;
-        this.description = description;
-    }
-
-
 }

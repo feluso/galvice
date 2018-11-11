@@ -13,9 +13,11 @@ import { DataRetrieval } from './http/data-retrieval.service';
 import { AboutTabComponent } from './menu/info/about-tab/about-tab.component';
 import { ContactTabComponent } from './menu/info/contact-tab/contact-tab.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ExperienceComponent } from './menu/experience/experience.component';
 
 const routes: Routes = [
   { path: 'info', component: InfoComponent, outlet: 'popup' },
+  { path: 'experience', component: ExperienceComponent, outlet: 'popup' },
   { path: 'menu', component: MenuComponent },
 ];
 
@@ -27,7 +29,8 @@ const routes: Routes = [
     InfoTabComponent,
     SkillItemComponent,
     AboutTabComponent,
-    ContactTabComponent
+    ContactTabComponent,
+    ExperienceComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@ import { Me } from '../../../../model/me.model';
 })
 export class AboutTabComponent implements OnInit {
 
-  public me: Me[] = [new Me('Test', 'Test@email', 123456789)];
+  public me: Me[] = [{name: 'Test', email: 'Test@email', number: 123456789, description: ''}];
 
   constructor(private data: DataRetrieval) { }
 

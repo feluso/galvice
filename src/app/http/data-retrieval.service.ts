@@ -5,6 +5,7 @@ import { Me } from '../../model/me.model';
 import { Observable } from 'rxjs';
 import { SocialMedia } from '../../model/social-media.model';
 import { map } from 'rxjs/operators';
+import { Experience } from '../../model/experience.model';
 
 @Injectable()
 export class DataRetrieval {
@@ -45,5 +46,9 @@ export class DataRetrieval {
                     }
                 )
             );
+    }
+
+    getExperience(): Observable<Experience[]> {
+        return this.http.get<Experience[]>('//localhost:8080/experience');
     }
 }

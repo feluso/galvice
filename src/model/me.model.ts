@@ -1,4 +1,4 @@
-export class Me {
+export interface Me {
     readonly name: string;
     readonly email: string;
     readonly number: number;

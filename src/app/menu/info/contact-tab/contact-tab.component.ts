@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Contact } from '../../../../model/contact.model';
+import { DataRetrieval } from '../../../http/data-retrieval.service';
 
 @Component({
   selector: 'app-contact-tab',
@@ -9,7 +11,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class ContactTabComponent implements OnInit {
 
   form: FormGroup;
-  constructor() { }
+  constructor(private dataStorage: DataRetrieval) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -20,7 +22,12 @@ export class ContactTabComponent implements OnInit {
   }
 
   onSubmit() {
-    console.warn(this.form.value);
+    const contact: Contact = {
+      name: this.form.get('name').value,
+      email: this.form.get('email').value,
+      description: this.form.get('message').value,
+    };
+    this.dataStorage.saveContact(contact);
   }
 
 }

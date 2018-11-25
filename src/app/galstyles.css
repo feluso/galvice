@@ -2,7 +2,7 @@ h1, p {
     color: gainsboro;
 }
 
-.modalVice {
+.basic-modal {
     background-color: rgb(18, 56, 123);
     background-color: rgba(18, 56, 123, 0.9);
     border-style: solid;
@@ -10,6 +10,17 @@ h1, p {
     border-width: 1px;
     border-radius: 0.5rem;
     color: gainsboro;
+}
+
+.center-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content-padding {
+    padding: 1em;
 }
 
 a {

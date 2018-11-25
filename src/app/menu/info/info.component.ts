@@ -19,7 +19,7 @@ export class InfoComponent implements OnInit {
   public socialMedia: SocialMedia[] = [];
 
 
-  constructor(private data: DataRetrieval, private router: Router) { }
+  constructor(private data: DataRetrieval) { }
 
   ngOnInit() {
     this.data.getMe().subscribe(
@@ -39,17 +39,5 @@ export class InfoComponent implements OnInit {
     this.tabToExpand = tabToExpand;
   }
 
-  routeToParent(): void {
-    this.router.navigate(
-      [
-        {
-          outlets: {
-            popup: null
-          }
-        }
-      ],
-
-    );
-  }
 
 }

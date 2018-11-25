@@ -1,4 +1,4 @@
-<div class="menu modalVice">
+<div class="menu basic-modal">
     <div class="toolbarArea">
         <a routerLink="../">x</a>
     </div>
@@ -16,10 +16,14 @@
             <label>Experience</label>
         </div>
         <div class="menuItem">
-                <a [routerLink]="['/', { outlets: {popup: ['info'] } } ]">
+                <a download href="assets/MateoDelgadoCV.pdf">
                     <img src="assets/images/cv.gif" alt="">
                 </a>
             <label>CV</label>
         </div>
     </div>
 </div>
+
+
+
+<iframe id="pdfDownload" style="display:none;"></iframe>

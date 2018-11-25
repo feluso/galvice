@@ -1,7 +1,6 @@
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 10px;
     grid-gap: 1em
 }
 

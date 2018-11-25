@@ -1,8 +1,4 @@
 .resizable-grid {
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    transform: translateY(-50%);
     display: grid;
     grid-template-columns: 15em 1fr;
     grid-template-rows: 18em 1fr;

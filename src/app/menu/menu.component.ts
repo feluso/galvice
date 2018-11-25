@@ -12,4 +12,8 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  download(url): void {
+    document.getElementById('pdfDownload').setAttribute('src', url);
+  }
+
 }

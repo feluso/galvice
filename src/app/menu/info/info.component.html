@@ -1,6 +1,6 @@
-<div class="resizable-grid">
+<div class="resizable-grid center-screen">
   <div class="containerInfo">
-    <div class="modalVice modalInfo">
+    <div class="basic-modal modalInfo">
       <h1> {{me.name}} </h1>
       <br>
       <br>
@@ -16,18 +16,16 @@
     </div>
   </div>
   <div class="expanded-tab-grid">
-    <div class="modalVice tab-content">
-      <div class="toolbarArea">
-        <a (click)="routeToParent()">x</a>
-      </div>
+    <div class="basic-modal tab-content">
+      <app-close-popup> </app-close-popup>
       <app-skills-tab *ngIf="tabToExpand==tab.SKILLS"></app-skills-tab>
       <app-about-tab *ngIf="tabToExpand==tab.ABOUT"></app-about-tab>
       <app-contact-tab *ngIf="tabToExpand==tab.CONTACT"></app-contact-tab>
     </div>
     <div class="tab">
-      <div class="modalVice" [ngClass]="{'inactive-tab' : tabToExpand!=tab.ABOUT}"><a (click)="expand(tab.ABOUT)">ABOUT</a></div>
-      <div class="modalVice" [ngClass]="{'inactive-tab' : tabToExpand!=tab.SKILLS}"><a (click)="expand(tab.SKILLS)">SKILLS</a></div>
-      <div class="modalVice" [ngClass]="{'inactive-tab' : tabToExpand!=tab.CONTACT}"><a (click)="expand(tab.CONTACT)">CONTACT</a></div>
+      <div class="basic-modal" [ngClass]="{'inactive-tab' : tabToExpand!=tab.ABOUT}"><a (click)="expand(tab.ABOUT)">ABOUT</a></div>
+      <div class="basic-modal" [ngClass]="{'inactive-tab' : tabToExpand!=tab.SKILLS}"><a (click)="expand(tab.SKILLS)">SKILLS</a></div>
+      <div class="basic-modal" [ngClass]="{'inactive-tab' : tabToExpand!=tab.CONTACT}"><a (click)="expand(tab.CONTACT)">CONTACT</a></div>
     </div>
   </div>
 </div>

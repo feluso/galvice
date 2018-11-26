@@ -1,7 +1,5 @@
 <div class="menu basic-modal">
-    <div class="toolbarArea">
-        <a routerLink="../">x</a>
-    </div>
+    <app-title-modal [title]="this"></app-title-modal>
     <div class="contentArea">
         <div class="menuItem">
             <a [routerLink]="['/', { outlets: {popup: ['info'] } } ]">
@@ -10,15 +8,15 @@
             <label>Info</label>
         </div>
         <div class="menuItem">
-                <a [routerLink]="['/', { outlets: {popup: ['experience'] } } ]">
-                    <img src="assets/images/experience.gif" alt="">
-                </a>
+            <a [routerLink]="['/', { outlets: {popup: ['experience'] } } ]">
+                <img src="assets/images/experience.gif" alt="">
+            </a>
             <label>Experience</label>
         </div>
         <div class="menuItem">
-                <a download href="assets/MateoDelgadoCV.pdf">
-                    <img src="assets/images/cv.gif" alt="">
-                </a>
+            <a download href="assets/MateoDelgadoCV.pdf">
+                <img src="assets/images/cv.gif" alt="">
+            </a>
             <label>CV</label>
         </div>
     </div>

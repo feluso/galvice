@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InfoTabComponent } from './info-tab.component';
+import { InfoTabComponent } from './skills-tab.component';
 
 describe('InfoTabComponent', () => {
   let component: InfoTabComponent;

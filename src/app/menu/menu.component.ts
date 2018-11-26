@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '../../model/title.interface';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent implements OnInit {
+export class MenuComponent implements OnInit, Title {
 
   constructor() { }
 
@@ -15,5 +16,11 @@ export class MenuComponent implements OnInit {
   download(url): void {
     document.getElementById('pdfDownload').setAttribute('src', url);
   }
+
+
+  closeRoute(): any[] {
+    return ['../'];
+  }
+
 
 }

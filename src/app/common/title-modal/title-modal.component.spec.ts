@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ClosePopupComponent } from './close-popup.component';
+import { TitleModalComponent } from './title-modal.component';
 
-describe('ClosePopupComponent', () => {
-  let component: ClosePopupComponent;
-  let fixture: ComponentFixture<ClosePopupComponent>;
+describe('TitleModalComponent', () => {
+  let component: TitleModalComponent;
+  let fixture: ComponentFixture<TitleModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ClosePopupComponent ]
+      declarations: [ TitleModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ClosePopupComponent);
+    fixture = TestBed.createComponent(TitleModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

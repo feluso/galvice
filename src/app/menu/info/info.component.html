@@ -17,7 +17,7 @@
   </div>
   <div class="expanded-tab-grid">
     <div class="basic-modal tab-content">
-      <app-close-popup> </app-close-popup>
+      <app-title-modal [title]="this"> </app-title-modal>
       <app-skills-tab *ngIf="tabToExpand==tab.SKILLS"></app-skills-tab>
       <app-about-tab *ngIf="tabToExpand==tab.ABOUT"></app-about-tab>
       <app-contact-tab *ngIf="tabToExpand==tab.CONTACT"></app-contact-tab>

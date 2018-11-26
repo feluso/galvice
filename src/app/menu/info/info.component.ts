@@ -4,6 +4,7 @@ import { Me } from '../../../model/me.model';
 import { Router } from '@angular/router';
 import { SocialMedia } from '../../../model/social-media.model';
 import { map } from 'rxjs/operators';
+import { Title } from '../../../model/title.interface';
 
 enum tab { ABOUT, SKILLS, CONTACT }
 @Component({
@@ -11,11 +12,12 @@ enum tab { ABOUT, SKILLS, CONTACT }
   templateUrl: './info.component.html',
   styleUrls: ['./info.component.css']
 })
-export class InfoComponent implements OnInit {
+export class InfoComponent implements OnInit, Title {
+  title: String;
 
   public tab = tab;
   public tabToExpand: tab = tab.ABOUT;
-  public me: Me[] = [{name: 'Test', email: 'Test@email', number: 123456789, description: ''}];
+  public me: Me[] = [{ name: 'Test', email: 'Test@email', number: 123456789, description: '' }];
   public socialMedia: SocialMedia[] = [];
 
 
@@ -33,10 +35,27 @@ export class InfoComponent implements OnInit {
         console.log(socialMedia);
       }
     );
+    this.title = this.getTitle();
   }
 
   expand(tabToExpand: tab): void {
     this.tabToExpand = tabToExpand;
+  }
+
+  getTitle(): String {
+    switch (this.tabToExpand) {
+      case tab.ABOUT:
+        return 'About';
+      case tab.SKILLS:
+        return 'Skills';
+      case tab.CONTACT:
+        return 'Contact';
+
+    }
+  }
+
+  closeRoute(): any[] {
+    return [{outlets: {popup: null}}];
   }
 
 

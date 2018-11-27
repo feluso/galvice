@@ -7,6 +7,7 @@ import { Title } from '../../model/title.interface';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit, Title {
+  closeRoute = ['../'];
 
   constructor() { }
 
@@ -16,11 +17,5 @@ export class MenuComponent implements OnInit, Title {
   download(url): void {
     document.getElementById('pdfDownload').setAttribute('src', url);
   }
-
-
-  closeRoute(): any[] {
-    return ['../'];
-  }
-
 
 }

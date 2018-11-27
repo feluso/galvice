@@ -18,7 +18,7 @@ export class TitleModalComponent implements OnInit {
 
   navigateTo(): void {
     this.router.navigate(
-      this.title.closeRoute()
+      this.title.closeRoute
     );
   }
 }

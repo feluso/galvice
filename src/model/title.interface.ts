@@ -1,5 +1,5 @@
 export interface Title {
     title?: String;
-    closeRoute(): any[];
+    closeRoute: any[];
 
 }

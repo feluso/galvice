@@ -14,6 +14,7 @@ enum tab { ABOUT, SKILLS, CONTACT }
 })
 export class InfoComponent implements OnInit, Title {
   title: String;
+  closeRoute = [{outlets: {popup: null}}];
 
   public tab = tab;
   public tabToExpand: tab = tab.ABOUT;
@@ -32,7 +33,6 @@ export class InfoComponent implements OnInit, Title {
     this.data.getSocialMedia().subscribe(
       (socialMedia) => {
         this.socialMedia = socialMedia;
-        console.log(socialMedia);
       }
     );
     this.title = this.getTitle();
@@ -40,6 +40,7 @@ export class InfoComponent implements OnInit, Title {
 
   expand(tabToExpand: tab): void {
     this.tabToExpand = tabToExpand;
+    this.title = this.getTitle();
   }
 
   getTitle(): String {
@@ -53,10 +54,5 @@ export class InfoComponent implements OnInit, Title {
 
     }
   }
-
-  closeRoute(): any[] {
-    return [{outlets: {popup: null}}];
-  }
-
 
 }

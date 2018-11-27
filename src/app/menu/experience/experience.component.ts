@@ -10,6 +10,7 @@ import { Title } from '../../../model/title.interface';
 })
 export class ExperienceComponent implements OnInit, Title {
   title: String = 'Experience';
+  closeRoute = [{outlets: {popup: null}}];
 
 
   experiences: Experience[] = [{
@@ -28,10 +29,5 @@ export class ExperienceComponent implements OnInit, Title {
       }
     );
   }
-
-  closeRoute() {
-    return [{outlets: {popup: null}}];
-  }
-
 
 }

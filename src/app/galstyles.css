@@ -1,5 +1,12 @@
-h1, p {
+@font-face {
+    font-family: "Apple II";
+    src: url("/assets/fonts/PrintChar21.ttf");
+  }
+
+
+h1, p, a, label {
     color: gainsboro;
+    text-transform: lowercase;
 }
 
 .basic-modal {
@@ -31,8 +38,12 @@ a:hover {
     color: greenyellow;
 }
 
+body, h1, p, a, label {
+    font-family: 'Apple II', 'Consolas', 'Roboto', 'Courier New', Courier, monospace;
+}
+
 body {
-    font-family: 'Consolas', 'Roboto', 'Courier New', Courier, monospace;
+    font-size: 14px;
 }
 
 .toolbarArea > a {

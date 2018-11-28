@@ -1,7 +1,7 @@
 .contact-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1em
+    grid-gap: 1em;
 }
 
 .contactPair {
@@ -15,5 +15,14 @@
 
 button {
     position: relative;
-    left: 90%;
+    left: 85%;
+}
+
+input {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    height: 20em;
 }

@@ -4,52 +4,64 @@
 }
 
 .galvice {  
-    width: 600px;
-    height: 300px;
-    background-color: #953737;
+    /* width: 600px; */
+    /* height: 300px; */
+    background-color: #3593aa;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     display: grid;
-    border-radius: 1rem;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(10, 1fr);
+    /* border-radius: 45% / 60% 60% 35% 35%; */
+    border-radius: 5%;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(14, 1fr);
     grid-template-areas:
-    " . . . . . . . . . . . . . . . . . . . . "
-    " . . . . . . . . . . . . . . . . . . . . "
-    " . s s s s s s . . . . . . . . . . . b . "
-    " . s s s s s s . . . . . . . . . . . b . "
-    " . s s s s s s . . . . . . . . . . . b . "
-    " . s s s s s s . . . . . . . . . . . b . "
-    " . s s s s s s . . . . . . . . . . . b . "
-    " . s s s s s s . . . . . . . . . . . b . "
-    " . . . . . . . . . . . . . . . . . . . . "
-    " . . . . . . . . . . . . . . . . . . . . ";
+    " . . . . . . . . . . . . "
+    " . . . . . . . . . . . . "
+    " . . s s s s s s s s . . "
+    " . . s s s s s s s s . . "
+    " . . s s s s s s s s . . "
+    " . . s s s s s s s s . . "
+    " . . s s s s s s s s . . "
+    " . . s s s s s s s s . . "
+    " . . s s s s s s s s . . "
+    " . . s s s s s s s s . . "
+    " . . . . . . . . . . . . "
+    " . . . b b b b b b . . . "
+    " . . . . . . . . . . . . "
+    " . . . . . . . . . . . . "
+    ;
 
     
 }
 
 .screen {
-    background-color: #bee0a1;
+    background-color: #ceda93;
     font-family: consolas;
     background-image:url(assets/images/gridvice.png);
     grid-area: s;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-template-rows: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr; 
     position: relative;
+    border: 2px solid #6f7a37;
 }
 
 .btnVice {
     grid-area: b;
     display: grid;
-    width: 20px;
     row-gap: 3px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .btnVice > a {
-    background-color: gainsboro;
+    background-color: white;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    grid-column: 1 / 2;
+    border-radius: 50% 50% 50% 50%;
 }
 
 .absoluteContainer {

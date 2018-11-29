@@ -26,6 +26,12 @@ h1, p, a, label {
     transform: translate(-50%, -50%);
 }
 
+.vertical-center {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 .content-padding {
     padding: 1em;
 }
@@ -38,7 +44,7 @@ a:hover {
     color: greenyellow;
 }
 
-body, h1, p, a, label {
+body, h1, p, a, label, div {
     font-family: 'Apple II', 'Consolas', 'Roboto', 'Courier New', Courier, monospace;
 }
 

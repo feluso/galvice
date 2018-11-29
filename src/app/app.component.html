@@ -1,20 +1,7 @@
 <div class="galcontainer">
-  <div class="galvice">
-    <div class="screen">
-      <div class="textContainer">{{actualMessage}}</div>
 
-      <img src="assets/images/at.gif" alt="">
-    </div>
-    <div class="btnVice">
-      
-      <a routerLink="/menu"></a>
-
-    </div>
-  </div>
-  <div class="absoluteContainer">
-    <router-outlet></router-outlet>
-  </div>
-
+  <app-intro></app-intro>
+  <app-device></app-device>
   <router-outlet name="popup"></router-outlet>
 
 </div>

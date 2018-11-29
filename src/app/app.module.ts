@@ -15,6 +15,8 @@ import { ContactTabComponent } from './menu/info/contact-tab/contact-tab.compone
 import { ReactiveFormsModule } from '@angular/forms';
 import { ExperienceComponent } from './menu/experience/experience.component';
 import { TitleModalComponent } from './common/title-modal/title-modal.component';
+import { IntroComponent } from './intro/intro.component';
+import { DeviceComponent } from './device/device.component';
 
 const routes: Routes = [
   { path: 'info', component: InfoComponent, outlet: 'popup' },
@@ -32,7 +34,9 @@ const routes: Routes = [
     AboutTabComponent,
     ContactTabComponent,
     ExperienceComponent,
-    TitleModalComponent
+    TitleModalComponent,
+    IntroComponent,
+    DeviceComponent
   ],
   imports: [
     BrowserModule,

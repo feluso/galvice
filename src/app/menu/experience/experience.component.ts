@@ -8,9 +8,7 @@ import { Title } from '../../../model/title.interface';
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.css']
 })
-export class ExperienceComponent implements OnInit, Title {
-  title: String = 'Experience';
-  closeRoute = [{outlets: {popup: null}}];
+export class ExperienceComponent implements OnInit {
 
 
   experiences: Experience[] = [{

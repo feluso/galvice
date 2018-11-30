@@ -1,28 +1,17 @@
-<div class="info-grid center-screen">
-    <div class="basic-modal modal-info">
-      <h1> {{me.name}} </h1>
-      <br>
-      <br>
-      <br>
-      <p>
-        Development Analyst <br>
-        {{me.number}} <br>
-        {{me.email}} <br> 
-      </p>
-        <div *ngFor="let socialSite of socialMedia">
-            {{socialSite.icon}} {{socialSite.user}} 
-        </div>
-    </div>
+<div class="center-screen">
   <div class="expanded-tab-grid">
     <div class="basic-modal tab-content">
       <app-title-modal [title]="this"> </app-title-modal>
       <app-skills-tab *ngIf="tabToExpand==tab.SKILLS"></app-skills-tab>
       <app-about-tab *ngIf="tabToExpand==tab.ABOUT"></app-about-tab>
+      <app-experience *ngIf="tabToExpand==tab.EXPERIENCE"></app-experience>
       <app-contact-tab *ngIf="tabToExpand==tab.CONTACT"></app-contact-tab>
+      
     </div>
     <div class="tab">
       <div class="basic-modal" [ngClass]="{'inactive-tab' : tabToExpand!=tab.ABOUT}"><a (click)="expand(tab.ABOUT)">ABOUT</a></div>
       <div class="basic-modal" [ngClass]="{'inactive-tab' : tabToExpand!=tab.SKILLS}"><a (click)="expand(tab.SKILLS)">SKILLS</a></div>
+      <div class="basic-modal" [ngClass]="{'inactive-tab' : tabToExpand!=tab.EXPERIENCE}"><a (click)="expand(tab.EXPERIENCE)">EXPERIENCE</a></div>
       <div class="basic-modal" [ngClass]="{'inactive-tab' : tabToExpand!=tab.CONTACT}"><a (click)="expand(tab.CONTACT)">CONTACT</a></div>
     </div>
   </div>

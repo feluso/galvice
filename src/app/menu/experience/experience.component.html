@@ -1,8 +1,5 @@
-<div class="experience-grid center-screen basic-modal">
-  <app-title-modal [title]="this"> </app-title-modal>
-  <div class="experience-item" *ngFor="let experience of experiences">
-    <img src="{{experience.icon}}" alt="">
-    <h6>{{experience.title}}</h6>
-    <p>{{experience.description}}</p>
-  </div>
-</div>
+<div class="experience-item" *ngFor="let experience of experiences">
+  <img src="{{experience.icon}}" alt="">
+  <h6>{{experience.title}}</h6>
+  <p>{{experience.description}}</p>
+</div>

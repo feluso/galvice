@@ -17,10 +17,11 @@ import { ExperienceComponent } from './menu/experience/experience.component';
 import { TitleModalComponent } from './common/title-modal/title-modal.component';
 import { IntroComponent } from './intro/intro.component';
 import { DeviceComponent } from './device/device.component';
+import { ExtraInfoComponent } from './menu/extra-info/extra-info.component';
 
 const routes: Routes = [
   { path: 'info', component: InfoComponent, outlet: 'popup' },
-  { path: 'experience', component: ExperienceComponent, outlet: 'popup' },
+  { path: 'extrainfo', component: ExtraInfoComponent, outlet: 'popup' },
   { path: 'menu', component: MenuComponent },
 ];
 
@@ -36,7 +37,8 @@ const routes: Routes = [
     ExperienceComponent,
     TitleModalComponent,
     IntroComponent,
-    DeviceComponent
+    DeviceComponent,
+    ExtraInfoComponent
   ],
   imports: [
     BrowserModule,

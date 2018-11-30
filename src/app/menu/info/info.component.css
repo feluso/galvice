@@ -1,9 +1,3 @@
-.info-grid {
-    display: grid;
-    grid-template-columns: 2fr 4fr;
-    grid-template-rows: 3fr 1fr;
-}
-
 .expanded-tab-grid {
     display: grid;
     width: 37em;
@@ -18,23 +12,19 @@
     position: relative;
 }
 
-.modal-info {
-    padding: 1em 1em 1em 0.5em;
-    border-radius: 0.5em 0 0 0.5em;
-}
-
 .tab {
     text-orientation: sideways;
     writing-mode: vertical-rl;
     border-left: 0px;
-    height: 20em;
+    height: 30em;
     
     font-family: consolas;
     display: grid;
     
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    font-size: 1em;
     z-index: 2;
 }
 
@@ -43,6 +33,9 @@
     padding-bottom: 5px;
     text-align: end;
     cursor: pointer;
+    padding: 0.3em;
+    padding-top: 1em;
+    
 }
 
 .inactive-tab {

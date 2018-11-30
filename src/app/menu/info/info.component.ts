@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { DataRetrieval } from '../../http/data-retrieval.service';
 import { Me } from '../../../model/me.model';
-import { Router } from '@angular/router';
 import { SocialMedia } from '../../../model/social-media.model';
-import { map } from 'rxjs/operators';
 import { Title } from '../../../model/title.interface';
 
-enum tab { ABOUT, SKILLS, CONTACT }
+enum tab { ABOUT, SKILLS, CONTACT, EXPERIENCE }
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
@@ -18,23 +16,11 @@ export class InfoComponent implements OnInit, Title {
 
   public tab = tab;
   public tabToExpand: tab = tab.ABOUT;
-  public me: Me[] = [{ name: 'Test', email: 'Test@email', number: 123456789, description: '' }];
-  public socialMedia: SocialMedia[] = [];
 
 
-  constructor(private data: DataRetrieval) { }
+  constructor() { }
 
   ngOnInit() {
-    this.data.getMe().subscribe(
-      (me: Me[]) => {
-        this.me = me;
-      }
-    );
-    this.data.getSocialMedia().subscribe(
-      (socialMedia) => {
-        this.socialMedia = socialMedia;
-      }
-    );
     this.title = this.getTitle();
   }
 
@@ -51,6 +37,8 @@ export class InfoComponent implements OnInit, Title {
         return 'Skills';
       case tab.CONTACT:
         return 'Contact';
+      case tab.EXPERIENCE:
+        return 'Experience';
 
     }
   }

@@ -24,15 +24,9 @@ div {
 }
 
 .hasLevel {
-    background-color: white;
-    width:90%;
-    height: 50%;
-    transform: skew(-20deg, 0deg);
+    image-rendering: pixelated;
 }
 
 .hasNoLevel{
-    background-color: #727272;
-    width:  90%;
-    height: 50%;
-    transform: skew(-20deg, 0deg);
+    image-rendering: pixelated;
 }

@@ -9,13 +9,13 @@ import { Me } from '../../../../model/me.model';
 })
 export class AboutTabComponent implements OnInit {
 
-  public me: Me[] = [{name: 'Test', email: 'Test@email', number: 123456789, description: ''}];
+  public me: Me = {name: 'Test', email: 'Test@email', number: 123456789, description: ''};
 
   constructor(private data: DataRetrieval) { }
 
   ngOnInit() {
     this.data.getMe().subscribe(
-      (me: Me[]) => {
+      (me: Me) => {
         this.me = me;
       }
     );

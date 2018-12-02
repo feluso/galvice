@@ -6,10 +6,11 @@
     <div class="skillLevel" *ngFor="let hasLevel of hasLevels;">
       <ng-container *ngIf="skill.measureable">
         <ng-template [ngIf]="hasLevel==true" [ngIfElse]="doesntHaveLevel">
-          <div class="hasLevel"></div>
+          <!-- <div class="hasLevel"></div> -->
+          <img class="hasLevel" src="assets/images/skill-active.png" alt="">
         </ng-template>
         <ng-template #doesntHaveLevel>
-          <div class="hasNoLevel"></div>
+            <img  class="hasNoLevel" src="assets/images/skill-inactive.png" alt="">
         </ng-template>
       </ng-container>
     </div>

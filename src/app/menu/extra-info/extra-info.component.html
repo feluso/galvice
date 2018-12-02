@@ -1,13 +1,14 @@
 <div class="info-grid center-screen">
-  <div class="basic-modal modal-info">
-    <app-title-modal [title]="me.name"> </app-title-modal>
-
-    <p>
-      {{me.number}} <br>
-      {{me.email}} <br>
-    </p>
-    <div *ngFor="let socialSite of socialMedia">
-      {{socialSite.icon}} {{socialSite.user}}
+  <div class="basic-modal">
+    <app-title-modal [title]="this"> </app-title-modal>
+    <div class="modal-info">
+      <p>
+        {{me.number}} <br>
+        {{me.email}} <br>
+      </p>
+      <div *ngFor="let socialSite of socialMedia">
+        {{socialSite.icon}} {{socialSite.user}}
+      </div>
     </div>
   </div>
 </div>

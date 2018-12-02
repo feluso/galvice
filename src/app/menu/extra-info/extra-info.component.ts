@@ -10,15 +10,16 @@ import { Title } from '../../../model/title.interface';
   styleUrls: ['./extra-info.component.css']
 })
 export class ExtraInfoComponent implements OnInit, Title {
+  title: String = 'Find me';
   closeRoute: any[] = [{outlets: {popup: null}}];
-  public me: Me[] = [{ name: 'Test', email: 'Test@email', number: 123456789, description: '' }];
+  public me: Me = { name: '', email: '', number: 0, description: '' };
   public socialMedia: SocialMedia[] = [];
 
   constructor(private data: DataRetrieval) { }
 
   ngOnInit() {
     this.data.getMe().subscribe(
-      (me: Me[]) => {
+      (me: Me) => {
         this.me = me;
       }
     );

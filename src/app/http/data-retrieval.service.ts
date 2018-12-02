@@ -29,9 +29,9 @@ export class DataRetrieval {
             );
     }
 
-    getMe(): Observable<Me[]> {
+    getMe(): Observable<Me> {
         return this.http
-            .get<Me[]>('//localhost:8080/me');
+            .get<Me>('//localhost:8080/me');
     }
 
     getSocialMedia(): Observable<SocialMedia[]> {

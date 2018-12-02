@@ -41,7 +41,7 @@
 }
 
 .screen:hover {
-    cursor: pointer;
+    cursor: url(assets/images/hand-pointer.png), pointer;
 }
 
 .btnVice {

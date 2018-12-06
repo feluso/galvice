@@ -49,6 +49,7 @@
     display: grid;
     row-gap: 3px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
 }
 
 .btnVice > a {
@@ -56,8 +57,15 @@
     border-color: black;
     border-width: 3px;
     border-style: solid;
-    grid-column: 1 / 2;
     border-radius: 50% 50% 50% 50%;
+}
+
+#menu {
+    grid-column: 1 / 2;
+}
+
+#food {
+    grid-column: 6 / 7;
 }
 
 .absoluteContainer {

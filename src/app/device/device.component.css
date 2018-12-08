@@ -1,10 +1,7 @@
 .galvice {  
     width: 20em;
-    /* height: 300px; */
     background-color: #3593aa;
-
     display: grid;
-    /* border-radius: 45% / 60% 60% 35% 35%; */
     border-radius: 5%;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(14, 1fr);
@@ -44,6 +41,7 @@
     cursor: url(assets/images/hand-pointer.png), pointer;
 }
 
+
 .btnVice {
     grid-area: b;
     display: grid;
@@ -68,24 +66,21 @@
     grid-column: 6 / 7;
 }
 
-.absoluteContainer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
-.screen > img {
+#at {
     image-rendering: pixelated;
     height: 96px;
     grid-area: 2 / 2 / 3 / 3;
+    width: 100%;
 }
+
+#at:hover {
+    cursor: url(assets/images/hand-extended.png), pointer;
+}
+
 
 .textContainer {
     grid-area: 1 / 4 / 2 / 1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-transform: uppercase;
+    text-align: center;
 }

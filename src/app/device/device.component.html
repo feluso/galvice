@@ -2,7 +2,7 @@
   <div class="screen">
     <div class="textContainer">{{actualMessage}}</div>
 
-    <img src="assets/images/at.gif" alt="">
+    <img id="at" [src]="stateImage" alt="" (click)="pet()">
   </div>
   <div class="btnVice">
 
@@ -10,6 +10,6 @@
     <a id="food" routerLink="#"></a>
   </div>
 </div>
-<div class="absoluteContainer">
+<div class="center-screen">
   <router-outlet></router-outlet>
 </div>

@@ -2,12 +2,12 @@
   <div class="screen">
     <div class="textContainer">{{actualMessage}}</div>
 
-    <img id="at" [src]="stateImage" alt="" (click)="pet()">
+    <img id="at" [src]="this.state.imgUrl" alt="" (click)="pet()">
   </div>
   <div class="btnVice">
 
     <a id="menu" routerLink="/menu"></a>
-    <a id="food" routerLink="#"></a>
+    <a id="food" (click)="eat()"></a>
   </div>
 </div>
 <div class="center-screen">

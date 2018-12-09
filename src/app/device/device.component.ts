@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Observer, from, timer, interval } from 'rxjs';
+import { GalState, State } from '../../model/gal-state.model';
+import { delay, delayWhen, take, map, zip } from 'rxjs/operators';
 
-enum state {IDLE, PET, EATING}
+
+
 
 @Component({
   selector: 'app-device',
@@ -12,8 +15,15 @@ export class DeviceComponent implements OnInit {
 
   title = 'app';
   actualMessage: String = '';
-  stateImage: String = 'assets/images/at.gif';
-  public state: state = state.IDLE;
+  idleState: GalState = { name: State.IDLE, imgUrl: 'assets/images/at.gif' };
+  pettingState: GalState = { name: State.PETTING, imgUrl: 'assets/images/happy.gif' };
+  eatingState: GalState = { name: State.EATING, imgUrl: 'assets/images/eat.gif' };
+
+  state: GalState = this.idleState;
+
+  stateObservable: Observable<GalState>;
+
+  statesQueued: Array<GalState>;
 
   constructor() { }
 
@@ -35,16 +45,38 @@ export class DeviceComponent implements OnInit {
         this.actualMessage = message;
       }
     );
+
+  }
+
+  pet(): void {
+    this.statesQueued = new Array();
+    this.statesQueued.push(this.pettingState);
+    this.statesQueued.push(this.idleState);
+    this.delayStates();
+    this.subscribeState();
   }
 
 
-  pet(): void {
-    this.state = state.PET;
-    this.stateImage = 'assets/images/happy.gif';
-    setTimeout(() => {
-      this.stateImage = 'assets/images/at.gif';
-      this.state = state.IDLE;
-    }, 6000);
+
+  eat(): void {
+    this.statesQueued = new Array();
+    this.statesQueued.push(this.eatingState);
+    this.statesQueued.push(this.pettingState);
+    this.statesQueued.push(this.idleState);
+    this.delayStates();
+    this.subscribeState();
+  }
+
+  private subscribeState() {
+    this.stateObservable.subscribe(state => {
+      this.state = state;
+    }
+    );
+  }
+
+
+  private delayStates() {
+    this.stateObservable = from(this.statesQueued).pipe(zip(timer(0, 6000), (d) => d));
   }
 
 

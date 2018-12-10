@@ -62,4 +62,9 @@ export class DataRetrieval {
         this.http.post<Contact>('//localhost:8080/contact', contact, httpOptions).subscribe(
         );
     }
+
+
+    saveState(name: String): Observable<number> {
+        return this.http.post<number>('//localhost:8080/state', name);
+    }
 }

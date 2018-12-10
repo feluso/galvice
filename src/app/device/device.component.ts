@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of, Observer, from, timer, interval } from 'rxjs';
+import { Observable, of, Observer, from, timer, interval, Subscription } from 'rxjs';
 import { GalState, State } from '../../model/gal-state.model';
 import { delay, delayWhen, take, map, zip } from 'rxjs/operators';
+import { DataRetrieval } from '../http/data-retrieval.service';
 
 
 
@@ -18,34 +19,30 @@ export class DeviceComponent implements OnInit {
   idleState: GalState = { name: State.IDLE, imgUrl: 'assets/images/at.gif' };
   pettingState: GalState = { name: State.PETTING, imgUrl: 'assets/images/happy.gif' };
   eatingState: GalState = { name: State.EATING, imgUrl: 'assets/images/eat.gif' };
-
+  asyncMessages: Observable<String>;
+  asyncSubscription: Subscription;
   state: GalState = this.idleState;
 
   stateObservable: Observable<GalState>;
 
   statesQueued: Array<GalState>;
 
-  constructor() { }
+  constructor(private data: DataRetrieval) { }
 
   ngOnInit(): void {
-    const asyncMessages = Observable.create(function (observer) {
-      const messages = ['Welcome!', 'More info on the left', 'Feed me on the right', ''];
+    const messages = ['Welcome!', 'More info on the left', 'Feed me on the right', ''];
+    this.subscribeToMessages(messages);
 
-      for (let index = 0; index < messages.length; index++) {
-        const message = messages[index];
-        setTimeout(() => {
-          observer.next(message);
-        }, index * 3000);
+  }
 
-      }
+  private subscribeToMessages(messages: String[]) {
+    if (this.asyncSubscription) {
+      this.asyncSubscription.unsubscribe();
+    }
+    this.asyncMessages = from(messages).pipe(zip(timer(0, 3000), (d) => d));
+    this.asyncSubscription = this.asyncMessages.subscribe(message => {
+      this.actualMessage = message;
     });
-
-    asyncMessages.subscribe(
-      message => {
-        this.actualMessage = message;
-      }
-    );
-
   }
 
   pet(): void {
@@ -54,6 +51,13 @@ export class DeviceComponent implements OnInit {
     this.statesQueued.push(this.idleState);
     this.delayStates();
     this.subscribeState();
+    const petObservable = this.data.saveState('pet');
+    petObservable.subscribe(
+      (amount) => {
+        const messages = ['Pet', amount + ' times', ''];
+        this.subscribeToMessages(messages);
+      }
+    );
   }
 
 
@@ -65,6 +69,13 @@ export class DeviceComponent implements OnInit {
     this.statesQueued.push(this.idleState);
     this.delayStates();
     this.subscribeState();
+    const eatObservable = this.data.saveState('eat');
+    eatObservable.subscribe(
+      (amount) => {
+        const messages = ['Fed', amount + ' times', ''];
+        this.subscribeToMessages(messages);
+      }
+    );
   }
 
   private subscribeState() {

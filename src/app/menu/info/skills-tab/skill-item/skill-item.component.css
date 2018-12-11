@@ -11,6 +11,11 @@ p {
     text-align: center;
 }
 
+.take-grid {
+    grid-row: 1 / 4;
+    padding-top: 1em;
+}
+
 div {
     text-align: center;
 }
@@ -31,4 +36,11 @@ div {
 .hasNoLevel{
     image-rendering: pixelated;
     width: 100%
+}
+
+.white-border {
+    border-color: whitesmoke;
+    border-style: dashed;
+    border-width: 0.2em;
+
 }

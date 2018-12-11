@@ -6,6 +6,7 @@
 .skillGroup {
     grid-column: 1 / 4; 
     text-align: left;
+    padding-top: 1.5em;
 }
 
 app-skill-item {

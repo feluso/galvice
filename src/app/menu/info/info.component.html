@@ -9,10 +9,10 @@
       
     </div>
     <div class="tab">
-      <div class="basic-modal" [ngClass]="{'inactive-tab' : tabToExpand!=tab.ABOUT}"><a (click)="expand(tab.ABOUT)">ABOUT</a></div>
-      <div class="basic-modal" [ngClass]="{'inactive-tab' : tabToExpand!=tab.SKILLS}"><a (click)="expand(tab.SKILLS)">SKILLS</a></div>
-      <div class="basic-modal" [ngClass]="{'inactive-tab' : tabToExpand!=tab.EXPERIENCE}"><a (click)="expand(tab.EXPERIENCE)">EXPERIENCE</a></div>
-      <div class="basic-modal" [ngClass]="{'inactive-tab' : tabToExpand!=tab.CONTACT}"><a (click)="expand(tab.CONTACT)">CONTACT</a></div>
+      <div class="basic-modal" [ngClass]="{'inactive-tab' : tabToExpand!=tab.ABOUT}" (click)="expand(tab.ABOUT)">ABOUT</div>
+      <div class="basic-modal" [ngClass]="{'inactive-tab' : tabToExpand!=tab.SKILLS}"(click)="expand(tab.SKILLS)">SKILLS</div>
+      <div class="basic-modal" [ngClass]="{'inactive-tab' : tabToExpand!=tab.EXPERIENCE}" (click)="expand(tab.EXPERIENCE)">EXPERIENCE</div>
+      <div class="basic-modal" [ngClass]="{'inactive-tab' : tabToExpand!=tab.CONTACT}" (click)="expand(tab.CONTACT)">CONTACT</div>
     </div>
   </div>
 </div>

@@ -1,12 +1,11 @@
-<div class="skillItem">
-  <p>
-    {{skill.name}}
-  </p>
+<div class="skillItem" [ngClass]="{'white-border' : !skill.measureable && !skill.group}">
+    <p [ngClass]="{'take-grid' : !skill.measureable && !skill.group}">
+        {{skill.name}}
+      </p>
   <div class="skillBar">
     <div class="skillLevel" *ngFor="let hasLevel of hasLevels;">
       <ng-container *ngIf="skill.measureable">
         <ng-template [ngIf]="hasLevel==true" [ngIfElse]="doesntHaveLevel">
-          <!-- <div class="hasLevel"></div> -->
           <img class="hasLevel" src="assets/images/skill-active.png" alt="">
         </ng-template>
         <ng-template #doesntHaveLevel>

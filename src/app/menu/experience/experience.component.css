@@ -7,14 +7,15 @@
 .experience-item {
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 1fr 10fr;
     padding: 1em;
 }
 
 .experience-item > img {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
-    padding: 0 0.5em 0 0.5em;
+    padding: 20% 1em 0 1em;
+    width: 10em;
 } 
 
  .experience-item > h6 {

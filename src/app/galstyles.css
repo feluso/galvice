@@ -6,7 +6,6 @@
 
 h1, p, a, label {
     color: gainsboro;
-    text-transform: lowercase;
 }
 
 .basic-modal {

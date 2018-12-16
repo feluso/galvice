@@ -28,7 +28,6 @@
 .screen {
     background-color: #ceda93;
     font-family: consolas;
-    background-image:url(assets/images/gridvice.png);
     grid-area: s;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -71,7 +70,13 @@
     image-rendering: pixelated;
     height: 96px;
     grid-area: 2 / 2 / 3 / 3;
-    width: 100%;
+    width: 96px;
+}
+
+#meat {
+    image-rendering: pixelated;
+    height: 96px;
+    grid-area: 2 / 2 / 3 / 3;
 }
 
 #at:hover {

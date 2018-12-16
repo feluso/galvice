@@ -3,11 +3,12 @@
     <div class="textContainer">{{actualMessage}}</div>
 
     <img id="at" [src]="this.state.imgUrl" alt="" (click)="pet()">
+    <img *ngIf="this.state == eatingState" id="meat" src="assets/images/meat.gif">
   </div>
   <div class="btnVice">
 
     <a id="menu" routerLink="/menu"></a>
-    <a id="food" (click)="eat()"></a>
+    <a id="food" (click)="eat()" routerLink="#"></a>
   </div>
 </div>
 <div class="center-screen">

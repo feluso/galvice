@@ -2,13 +2,13 @@
   <div class="basic-modal">
     <app-title-modal [title]="this"> </app-title-modal>
     <div class="modal-info">
-      <p>
-        {{me.number}} <br>
+        {{me.number | phone}} <br>
         {{me.email}} <br>
-      </p>
       <div *ngFor="let socialSite of socialMedia">
-        {{socialSite.icon}} {{socialSite.user}}
+        <img class="small-icon"[src]=socialSite.icon> 
+        <a [href]="socialSite.user" target="_blank">{{socialSite.platform}}</a>
       </div>
     </div>
+    <app-contact-tab></app-contact-tab>
   </div>
 </div>

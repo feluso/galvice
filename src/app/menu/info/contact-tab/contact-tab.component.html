@@ -1,18 +1,6 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <div class="contact-container content-padding">
-      <div class="contactPair">
-        <label for="name">Name</label>
-        <input formControlName="name" id="name" type="text">
-      </div>
-
-      <div class="contactPair">
-        <label for="email">Email</label>
-        <input formControlName="email" id="email" type="text">
-      </div>
-      <div class="contactPair" id="message-pair">
-        <label for="message">Message</label>
-        <textarea formControlName="message" id="message"></textarea>
-      </div>
+  <div class="content-padding">
+        <textarea formControlName="message" id="message" placeholder="Leave me a message!"></textarea>
     </div>
     <button type="submit" [disabled]="!form.valid">-></button>
   </form>

@@ -4,7 +4,7 @@ import { Me } from '../../../model/me.model';
 import { SocialMedia } from '../../../model/social-media.model';
 import { Title } from '../../../model/title.interface';
 
-enum tab { ABOUT, SKILLS, CONTACT, EXPERIENCE }
+enum tab { ABOUT, SKILLS, EXPERIENCE }
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
@@ -35,11 +35,8 @@ export class InfoComponent implements OnInit, Title {
         return 'About';
       case tab.SKILLS:
         return 'Skills';
-      case tab.CONTACT:
-        return 'Contact';
       case tab.EXPERIENCE:
         return 'Experience';
-
     }
   }
 

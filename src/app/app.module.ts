@@ -18,6 +18,7 @@ import { TitleModalComponent } from './common/title-modal/title-modal.component'
 import { IntroComponent } from './intro/intro.component';
 import { DeviceComponent } from './device/device.component';
 import { ExtraInfoComponent } from './menu/extra-info/extra-info.component';
+import { PhonePipe } from './common/phone.pipe';
 
 const routes: Routes = [
   { path: 'info', component: InfoComponent, outlet: 'popup' },
@@ -38,7 +39,8 @@ const routes: Routes = [
     TitleModalComponent,
     IntroComponent,
     DeviceComponent,
-    ExtraInfoComponent
+    ExtraInfoComponent,
+    PhonePipe
   ],
   imports: [
     BrowserModule,

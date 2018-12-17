@@ -1,28 +1,21 @@
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 1em;
-}
-
-.contactPair {
-    display: grid;
-    grid-template-columns: 1fr;
-}
-
-#message-pair {
-    grid-column: 1 / 3;
-}
-
 button {
     position: relative;
     left: 85%;
+    background-color: rgba(0, 0, 0, 0);
+    border: 0px;
+    color: gainsboro;
+    padding-bottom: 1em;
 }
 
-input {
-    width: 100%;
+button:disabled {
+    color:  rgba(0, 0, 0, 0);
 }
 
 textarea {
     width: 100%;
-    height: 20em;
+    height: 3em;
+    background-color: rgba(0, 0, 0, 0);
+    color: gainsboro;
+    border-color: gainsboro;
+    border-style: double;
 }

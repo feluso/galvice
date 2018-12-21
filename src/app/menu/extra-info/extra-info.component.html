@@ -9,6 +9,6 @@
         <a [href]="socialSite.user" target="_blank">{{socialSite.platform}}</a>
       </div>
     </div>
-    <app-contact-tab></app-contact-tab>
+    <app-contact-tab (confirmSave)="onSave()"></app-contact-tab>
   </div>
 </div>

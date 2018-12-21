@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Contact } from '../../../../model/contact.model';
 import { DataRetrieval } from '../../../http/data-retrieval.service';
+
 
 @Component({
   selector: 'app-contact-tab',
@@ -11,6 +12,7 @@ import { DataRetrieval } from '../../../http/data-retrieval.service';
 export class ContactTabComponent implements OnInit {
 
   form: FormGroup;
+  @Output() confirmSave = new EventEmitter<any>();
   constructor(private dataStorage: DataRetrieval) { }
 
   ngOnInit() {
@@ -24,6 +26,7 @@ export class ContactTabComponent implements OnInit {
       description: this.form.get('message').value,
     };
     this.dataStorage.saveContact(contact);
+    this.confirmSave.emit();
   }
 
 }

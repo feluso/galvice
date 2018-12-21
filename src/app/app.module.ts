@@ -19,6 +19,8 @@ import { IntroComponent } from './intro/intro.component';
 import { DeviceComponent } from './device/device.component';
 import { ExtraInfoComponent } from './menu/extra-info/extra-info.component';
 import { PhonePipe } from './common/phone.pipe';
+import { GalStateService } from './device/gal-state.service';
+import { MessageService } from './device/message.service';
 
 const routes: Routes = [
   { path: 'info', component: InfoComponent, outlet: 'popup' },
@@ -48,7 +50,9 @@ const routes: Routes = [
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [DataRetrieval],
+  providers: [DataRetrieval,
+    GalStateService,
+    MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

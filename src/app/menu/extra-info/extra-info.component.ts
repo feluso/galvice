@@ -5,6 +5,8 @@ import { DataRetrieval } from '../../http/data-retrieval.service';
 import { Title } from '../../../model/title.interface';
 import { Router } from '@angular/router';
 import { GalStateService } from '../../device/gal-state.service';
+import 'jquery-ui/ui/widgets/draggable';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-extra-info',
@@ -30,6 +32,8 @@ export class ExtraInfoComponent implements OnInit, Title {
         this.socialMedia = socialMedia;
       }
     );
+
+    ($('#contact') as any).draggable();
 
   }
 

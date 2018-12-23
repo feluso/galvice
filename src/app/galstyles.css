@@ -3,6 +3,12 @@
     src: url("/assets/fonts/PrintChar21.ttf");
   }
 
+  @font-face {
+    font-family: "Dina";
+    src: url("/assets/fonts/dina10px.ttf");
+  }
+
+
 
 h1, p, a, label {
     color: gainsboro;
@@ -43,9 +49,14 @@ a:hover {
     color: greenyellow;
 }
 
-body, h1, p, a, label, div {
+body, p, a, label, h1, div {
     font-family: 'Apple II', 'Consolas', 'Roboto', 'Courier New', Courier, monospace;
 }
+
+h1 {
+    font-family: 'Dina';
+}
+
 
 body {
     font-size: 14px;

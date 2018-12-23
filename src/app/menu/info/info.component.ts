@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { DataRetrieval } from '../../http/data-retrieval.service';
-import { Me } from '../../../model/me.model';
-import { SocialMedia } from '../../../model/social-media.model';
+import 'jquery-ui/ui/widgets/draggable';
+import * as $ from 'jquery';
 import { Title } from '../../../model/title.interface';
+
 
 enum tab { ABOUT, SKILLS, EXPERIENCE }
 @Component({
@@ -22,6 +22,7 @@ export class InfoComponent implements OnInit, Title {
 
   ngOnInit() {
     this.title = this.getTitle();
+    ($('#profile') as any).draggable();
   }
 
   expand(tabToExpand: tab): void {

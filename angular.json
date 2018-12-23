@@ -25,7 +25,11 @@
               "src/styles.css",
               "src/app/galstyles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/jquery-ui/ui/widget.js",
+              "node_modules/jquery-ui-dist/jquery-ui.min.js"
+             ]
           },
           "configurations": {
             "production": {

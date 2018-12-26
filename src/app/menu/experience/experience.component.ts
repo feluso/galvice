@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Experience } from '../../../model/experience.model';
 import { DataRetrieval } from '../../http/data-retrieval.service';
-import { Title } from '../../../model/title.interface';
 
 @Component({
   selector: 'app-experience',
@@ -12,9 +11,9 @@ export class ExperienceComponent implements OnInit {
 
 
   experiences: Experience[] = [{
-    icon: 'https://i.stack.imgur.com/jZhAM.png',
-    title: 'Workplace',
-    description: 'Test'
+    icon: '',
+    title: '',
+    description: ''
   }
 ];
 

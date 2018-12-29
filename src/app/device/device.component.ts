@@ -15,7 +15,7 @@ import 'jquery-ui/ui/widgets/draggable';
 })
 export class DeviceComponent implements OnInit {
 
-  constructor(private data: DataRetrieval, private stateService: GalStateService, private messageService: MessageService) { }
+  constructor(private data: DataRetrieval, public stateService: GalStateService, public messageService: MessageService) { }
 
   ngOnInit(): void {
     const messages = ['Welcome!', 'More info on the left', 'Feed me on the right', ''];

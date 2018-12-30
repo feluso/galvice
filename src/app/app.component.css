@@ -3,3 +3,14 @@
     position: relative;
     display: grid;
 }
+
+
+@media (height <= 30em) {
+    app-info {
+        grid-column: 1 / 2;
+    }
+
+    app-device {
+        grid-column: 2 / 3;
+    }
+}

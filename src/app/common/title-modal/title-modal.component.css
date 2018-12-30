@@ -2,3 +2,7 @@ h1 {
     display: inline;
     padding: 0.3em;
 }
+
+a {
+    font-size: 1.5em;
+}

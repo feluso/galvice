@@ -2,17 +2,4 @@
     height: 100vh;
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-}
-
-app-intro {
-    grid-column: 1 / 2;
-    padding: 3em;
-
-}
-
-app-device {
-    grid-column: 2 / 3;
-    padding: 3em;
 }

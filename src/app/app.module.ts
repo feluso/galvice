@@ -21,6 +21,7 @@ import { ExtraInfoComponent } from './menu/extra-info/extra-info.component';
 import { PhonePipe } from './common/phone.pipe';
 import { GalStateService } from './device/gal-state.service';
 import { MessageService } from './device/message.service';
+import { Data } from './http/data.service';
 
 const routes: Routes = [
   { path: 'info', component: InfoComponent, outlet: 'popup' },
@@ -51,6 +52,7 @@ const routes: Routes = [
     ReactiveFormsModule
   ],
   providers: [DataRetrieval,
+    Data,
     GalStateService,
     MessageService],
   bootstrap: [AppComponent]

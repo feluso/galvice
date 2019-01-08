@@ -11,12 +11,14 @@ import { Contact } from '../../model/contact.model';
 @Injectable()
 export class DataRetrieval {
 
+    readonly url: String = 'http://localhost:5000/';
+
     constructor(private http: HttpClient) { }
 
 
     getSkills(): Observable<Skill[]> {
         return this.http
-            .get<({ name, grouping, measurable, levelValue }[])>('//localhost:8080/skills')
+            .get<({ name, grouping, measurable, levelValue }[])>(this.url + 'skills')
             .pipe(
                 map(
                     (skillsBackEnd) => {
@@ -31,12 +33,12 @@ export class DataRetrieval {
 
     getMe(): Observable<Me> {
         return this.http
-            .get<Me>('//localhost:8080/me');
+            .get<Me>(this.url + 'me');
     }
 
     getSocialMedia(): Observable<SocialMedia[]> {
         return this.http
-            .get<({ icon, platform, platformUrl }[])>('//localhost:8080/social-media').
+            .get<({ icon, platform, platformUrl }[])>(this.url + 'social-media').
             pipe(
                 map(
                     (socialMediaBackEnd: Array<{ icon, platform, platformUrl }>) => {
@@ -50,7 +52,7 @@ export class DataRetrieval {
     }
 
     getExperience(): Observable<Experience[]> {
-        return this.http.get<Experience[]>('//localhost:8080/experience');
+        return this.http.get<Experience[]>(this.url + 'experience');
     }
 
     saveContact(contact: Contact): void {
@@ -59,12 +61,12 @@ export class DataRetrieval {
               'Content-Type':  'application/json',
             })
         };
-        this.http.post<Contact>('//localhost:8080/contact', contact, httpOptions).subscribe(
+        this.http.post<Contact>(this.url + 'contact', contact, httpOptions).subscribe(
         );
     }
 
 
     saveState(name: String): Observable<number> {
-        return this.http.post<number>('//localhost:8080/state', name);
+        return this.http.post<number>(this.url + 'state', name);
     }
 }

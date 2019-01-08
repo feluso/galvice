@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataRetrieval } from '../../../http/data-retrieval.service';
 import { Me } from '../../../../model/me.model';
+import { Data } from '../../../http/data.service';
 
 @Component({
   selector: 'app-about-tab',
@@ -9,16 +9,9 @@ import { Me } from '../../../../model/me.model';
 })
 export class AboutTabComponent implements OnInit {
 
-  public me: Me = {name: 'Test', email: 'Test@email', number: 123456789, description: ''};
-
-  constructor(private data: DataRetrieval) { }
+  constructor(public data: Data) { }
 
   ngOnInit() {
-    this.data.getMe().subscribe(
-      (me: Me) => {
-        this.me = me;
-      }
-    );
   }
 
 

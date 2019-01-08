@@ -14,11 +14,15 @@ export class GalStateService {
     state: GalState = this.idleState;
     stateObservable: Observable<GalState>;
     statesQueued: Array<GalState>;
+    inState: Boolean;
 
     constructor(private data: DataRetrieval, private messageService: MessageService) { }
 
 
     pet(): void {
+        if (this.inState) {
+            return;
+        }
         this.statesQueued = new Array();
         this.statesQueued.push(this.pettingState);
         this.statesQueued.push(this.idleState);
@@ -33,6 +37,9 @@ export class GalStateService {
         );
     }
     eat(): void {
+        if (this.inState) {
+            return;
+        }
         this.statesQueued = new Array();
         this.statesQueued.push(this.eatingState);
         this.statesQueued.push(this.pettingState);
@@ -49,6 +56,9 @@ export class GalStateService {
     }
 
     sendContact(): void {
+        if (this.inState) {
+            return;
+        }
         this.statesQueued = new Array();
         this.statesQueued.push(this.pettingState);
         this.statesQueued.push(this.idleState);
@@ -61,6 +71,11 @@ export class GalStateService {
     private subscribeState() {
         this.stateObservable.subscribe(state => {
             this.state = state;
+            this.inState = true;
+        },
+        () => {},
+        () => {
+            this.inState = false;
         }
         );
     }

@@ -1,30 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Experience } from '../../../model/experience.model';
 import { DataRetrieval } from '../../http/data-retrieval.service';
+import { Data } from '../../http/data.service';
 
 @Component({
   selector: 'app-experience',
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.css']
 })
-export class ExperienceComponent implements OnInit {
+export class ExperienceComponent {
 
-
-  experiences: Experience[] = [{
-    icon: '',
-    title: '',
-    description: ''
-  }
-];
-
-  constructor(private data: DataRetrieval) { }
-
-  ngOnInit() {
-    this.data.getExperience().subscribe(
-      (experiences: Experience[]) => {
-        this.experiences = experiences;
-      }
-    );
-  }
-
+  constructor(public data: Data) { }
 }

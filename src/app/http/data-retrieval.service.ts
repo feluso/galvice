@@ -7,11 +7,12 @@ import { SocialMedia } from '../../model/social-media.model';
 import { map } from 'rxjs/operators';
 import { Experience } from '../../model/experience.model';
 import { Contact } from '../../model/contact.model';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class DataRetrieval {
 
-    readonly url: String = 'http://localhost:5000/';
+    readonly url: String = environment.backendUrl;
 
     constructor(private http: HttpClient) { }
 

@@ -22,6 +22,8 @@ import { PhonePipe } from './common/phone.pipe';
 import { GalStateService } from './device/gal-state.service';
 import { MessageService } from './device/message.service';
 import { Data } from './http/data.service';
+import { deviceReduce } from './device/device.reducers';
+import { StoreModule } from '@ngrx/store';
 
 const routes: Routes = [
   { path: 'info', component: InfoComponent, outlet: 'popup' },
@@ -48,6 +50,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    StoreModule.forRoot({device: deviceReduce}),
     HttpClientModule,
     ReactiveFormsModule
   ],

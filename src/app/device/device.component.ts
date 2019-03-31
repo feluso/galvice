@@ -4,9 +4,10 @@ import { GalStateService } from './gal-state.service';
 import { MessageService } from './message.service';
 import * as $ from 'jquery';
 import 'jquery-ui/ui/widgets/draggable';
-
-
-
+import { Store } from '@ngrx/store';
+import * as fromDevice from './device.reducers';
+import { Observable } from 'rxjs';
+import { Feed } from './device.actions';
 
 @Component({
   selector: 'app-device',
@@ -14,12 +15,15 @@ import 'jquery-ui/ui/widgets/draggable';
   styleUrls: ['./device.component.css']
 })
 export class DeviceComponent implements OnInit {
-
-  constructor(private data: DataRetrieval, public stateService: GalStateService, public messageService: MessageService) { }
+  device$: Observable<fromDevice.State>;
+  constructor(private store: Store<fromDevice.State>,
+    public stateService: GalStateService, public messageService: MessageService) { }
 
   ngOnInit(): void {
+    this.device$ = this.store.select('device');
     const messages = ['Welcome!', 'More info on the left', 'Feed me on the right', ''];
     this.messageService.subscribeToMessages(messages);
+
     ($('#device') as any).draggable();
   }
 
@@ -30,7 +34,8 @@ export class DeviceComponent implements OnInit {
 
 
   eat(): void {
-    this.stateService.eat();
+    // this.stateService.eat();
+    this.store.dispatch(new Feed);
   }
 
 }

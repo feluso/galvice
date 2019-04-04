@@ -1,6 +1,6 @@
 import { Observable, from, timer } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { State, GalState } from '../../model/gal-state.model';
+import { States, GalState } from '../../model/gal-state.model';
 import { DataRetrieval } from '../http/data-retrieval.service';
 import { MessageService } from './message.service';
 import { zip } from 'rxjs/operators';
@@ -8,9 +8,9 @@ import { zip } from 'rxjs/operators';
 @Injectable()
 export class GalStateService {
 
-    idleState: GalState = { name: State.IDLE, imgUrl: 'assets/images/at.gif' };
-    pettingState: GalState = { name: State.PETTING, imgUrl: 'assets/images/happy.gif' };
-    eatingState: GalState = { name: State.EATING, imgUrl: 'assets/images/eat.gif' };
+    idleState: GalState = { name: States.IDLE, imgUrl: 'assets/images/at.gif' };
+    pettingState: GalState = { name: States.PETTING, imgUrl: 'assets/images/happy.gif' };
+    eatingState: GalState = { name: States.EATING, imgUrl: 'assets/images/eat.gif' };
     state: GalState = this.idleState;
     stateObservable: Observable<GalState>;
     statesQueued: Array<GalState>;

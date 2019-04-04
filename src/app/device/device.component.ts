@@ -7,7 +7,7 @@ import 'jquery-ui/ui/widgets/draggable';
 import { Store } from '@ngrx/store';
 import * as fromDevice from './device.reducers';
 import { Observable } from 'rxjs';
-import { Feed } from './device.actions';
+import { Feed, Pet } from './device.actions';
 
 @Component({
   selector: 'app-device',
@@ -28,13 +28,10 @@ export class DeviceComponent implements OnInit {
   }
 
   pet(): void {
-    this.stateService.pet();
+    this.store.dispatch(new Pet);
   }
 
-
-
   eat(): void {
-    // this.stateService.eat();
     this.store.dispatch(new Feed);
   }
 

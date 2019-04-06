@@ -1,14 +1,14 @@
 import * as Device from './device.actions';
 import { GalState, idleState, pettingState, eatingState } from '../../model/gal-state.model';
 
-
-
-export const getStreamState = (state: State) => state.states;
-
 export interface State {
     name: String;
     states: GalState[];
 }
+
+export const selectStates = (state: State): GalState[] => {
+    return state.states;
+};
 
 export const initialState: State = {
     name: 'Idle',

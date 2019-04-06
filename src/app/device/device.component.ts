@@ -9,7 +9,7 @@ import * as fromDevice from './';
 import { Observable } from 'rxjs';
 import { Feed, Pet } from './device.actions';
 import { idleState, pettingState, eatingState, GalState } from '../../model/gal-state.model';
-import { take } from 'rxjs/operators';
+import { take, concatMap, concatAll, mergeAll, switchMap, exhaustMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-device',
@@ -17,12 +17,12 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./device.component.css']
 })
 export class DeviceComponent implements OnInit {
-  states$: Observable<Observable<GalState>>;
+  states$: Observable<GalState>;
   eating = eatingState;
-  constructor(private store: Store<fromDevice.State>, public messageService: MessageService) { }
+  constructor(private store: Store<fromDevice.AppState>, public messageService: MessageService) { }
 
   ngOnInit(): void {
-    this.states$ = this.store.pipe(select(fromDevice.getTimedStates, 6000));
+    this.states$ = this.store.select(fromDevice.selectTimedStates, 6000).pipe(exhaustMap(streamState => streamState));
     const messages = ['Welcome!', 'More info on the left', 'Feed me on the right', ''];
     this.messageService.subscribeToMessages(messages);
 

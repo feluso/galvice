@@ -4,10 +4,12 @@ import { GalStateService } from './gal-state.service';
 import { MessageService } from './message.service';
 import * as $ from 'jquery';
 import 'jquery-ui/ui/widgets/draggable';
-import { Store } from '@ngrx/store';
-import * as fromDevice from './device.reducers';
+import { Store, select } from '@ngrx/store';
+import * as fromDevice from './';
 import { Observable } from 'rxjs';
 import { Feed, Pet } from './device.actions';
+import { idleState, pettingState, eatingState, GalState } from '../../model/gal-state.model';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-device',
@@ -15,12 +17,12 @@ import { Feed, Pet } from './device.actions';
   styleUrls: ['./device.component.css']
 })
 export class DeviceComponent implements OnInit {
-  device$: Observable<fromDevice.State>;
-  constructor(private store: Store<fromDevice.State>,
-    public stateService: GalStateService, public messageService: MessageService) { }
+  states$: Observable<Observable<GalState>>;
+  eating = eatingState;
+  constructor(private store: Store<fromDevice.State>, public messageService: MessageService) { }
 
   ngOnInit(): void {
-    this.device$ = this.store.select('device');
+    this.states$ = this.store.pipe(select(fromDevice.getTimedStates, 6000));
     const messages = ['Welcome!', 'More info on the left', 'Feed me on the right', ''];
     this.messageService.subscribeToMessages(messages);
 

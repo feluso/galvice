@@ -1,23 +1,18 @@
 import * as Device from './device.actions';
-import { GalState, States } from '../../model/gal-state.model';
-import { Observable, from, timer } from 'rxjs';
-import { map, zip } from 'rxjs/operators';
+import { GalState, idleState, pettingState, eatingState } from '../../model/gal-state.model';
 
-const idleState: GalState = { name: States.IDLE, imgUrl: 'assets/images/at.gif' };
-const pettingState: GalState = { name: States.PETTING, imgUrl: 'assets/images/happy.gif' };
-const eatingState: GalState = { name: States.EATING, imgUrl: 'assets/images/eat.gif' };
 
-function delay(states: GalState[]): Observable<GalState> {
-    return from(states).pipe(zip(timer(0, 6000), (state, time) => state));
-}
+
+export const getStreamState = (state: State) => state.states;
+
 export interface State {
     name: String;
-    streamState: Observable<GalState>;
+    states: GalState[];
 }
 
 export const initialState: State = {
     name: 'Idle',
-    streamState: delay([idleState]),
+    states: [idleState],
 };
 
 export function deviceReduce(state = initialState, action: Device.Union): State {
@@ -25,14 +20,14 @@ export function deviceReduce(state = initialState, action: Device.Union): State 
         case Device.ActionTypes.Feed: {
             return {
                 name: 'Eating',
-                streamState: delay([eatingState, pettingState, idleState])
+                states: [eatingState, pettingState, idleState]
             };
         }
 
         case Device.ActionTypes.Pet: {
             return {
                 name: 'Pet',
-                streamState: delay([pettingState, idleState])
+                states: [pettingState, idleState]
             };
         }
 

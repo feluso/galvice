@@ -2,8 +2,8 @@
   <div class="screen">
     <div class="textContainer">{{this.messageService.actualMessage}}</div>
 
-    <img id="at" [src]="((device$ | async)?.streamState | async)?.imgUrl" alt="" (click)="pet()">
-    <img *ngIf="this.stateService.state == this.stateService.eatingState" id="meat" src="assets/images/meat.gif">
+    <img id="at" [src]="((states$ | async)?.streamState | async)?.imgUrl" alt="" (click)="pet()">
+    <img *ngIf="((states$ | async)?.streamState | async) == eating" id="meat" src="assets/images/meat.gif">
   </div>
   <div class="btnVice">
 

@@ -24,6 +24,8 @@ import { MessageService } from './device/message.service';
 import { Data } from './http/data.service';
 import { deviceReduce } from './device/device.reducers';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { DeviceEffects } from './device/device.effects';
 
 const routes: Routes = [
   { path: 'info', component: InfoComponent, outlet: 'popup' },
@@ -51,6 +53,7 @@ const routes: Routes = [
     BrowserModule,
     RouterModule.forRoot(routes),
     StoreModule.forRoot({device: deviceReduce}),
+    EffectsModule.forRoot([DeviceEffects]),
     HttpClientModule,
     ReactiveFormsModule
   ],

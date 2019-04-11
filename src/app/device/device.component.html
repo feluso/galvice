@@ -1,6 +1,6 @@
 <div id="device" class="galvice">
   <div class="screen">
-    <div class="textContainer">{{this.messageService.actualMessage}}</div>
+    <div class="textContainer">{{(messages$ | async)}}</div>
 
     <img id="at" [src]="(states$ | async)?.imgUrl" alt="" (click)="pet()">
     <img *ngIf="(states$ | async) == eating" id="meat" src="assets/images/meat.gif">

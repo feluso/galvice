@@ -11,11 +11,11 @@ export class DeviceEffects {
 
 
     @Effect()
-    saveTimesAte$ = this.actions$.pipe(
+    saveTimesChangedState$ = this.actions$.pipe(
         ofType(DeviceActions.ActionTypes.SaveMood),
-        mergeMap((moodName: String) => this.data.saveState(moodName).pipe(
-                map(numbersAte => ({type: DeviceActions.ActionTypes.SaveMoodSucceeded, payload: numbersAte})),
-                catchError(() => of(EMPTY))
+        mergeMap((action: DeviceActions.SaveMood) => this.data.saveState(action.payload).pipe(
+                map(numbersAte => new DeviceActions.SaveMoodSucceeded(numbersAte)),
+                catchError(() => EMPTY)
             )
         )
     );

@@ -1,19 +1,19 @@
 import * as Device from './device.actions';
-import { GalState, idleState, pettingState, eatingState } from '../../model/gal-state.model';
+import { GalMood, idle, happy, eating } from '../../../model/gal-state.model';
 
 export interface State {
     name: String;
-    states: GalState[];
+    moods: GalMood[];
     messages: String[];
 }
 
-export const selectStates = (state: State): GalState[] => {
-    return state.states;
+export const selectStates = (state: State): GalMood[] => {
+    return state.moods;
 };
 
 export const initialState: State = {
     name: 'Idle',
-    states: [idleState],
+    moods: [idle],
     messages: []
 };
 
@@ -23,7 +23,7 @@ export function deviceReduce(state = initialState, action: Device.Union): State 
             return {
                 ...state,
                 name: 'Eating',
-                states: [eatingState, pettingState, idleState]
+                moods: [eating, happy, idle]
             };
         }
 
@@ -31,15 +31,15 @@ export function deviceReduce(state = initialState, action: Device.Union): State 
             return {
                 ...state,
                 name: 'Pet',
-                states: [pettingState, idleState]
+                moods: [happy, idle]
             };
         }
 
-        case Device.ActionTypes.SaveMoodSucceeded: {
+        case Device.ActionTypes.SaveGalActionSucceeded: {
             return {
                 ...state,
-                name: 'Mood Save succeeded',
-                messages: ['Fed', action.payload + ' times', '']
+                name: 'Gal Action Save succeeded',
+                messages: [action.payload.description, action.payload.timesActionRealized + ' times', '']
             };
         }
 

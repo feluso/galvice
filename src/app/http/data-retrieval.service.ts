@@ -67,7 +67,7 @@ export class DataRetrieval {
     }
 
 
-    saveState(name: String): Observable<number> {
-        return this.http.post<number>(this.url + 'state', name);
+    saveState(name: String): Observable<Number> {
+        return this.http.post<Number>(this.url + 'state', name);
     }
 }

@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { DataRetrieval } from '../http/data-retrieval.service';
-import { GalStateService } from './gal-state.service';
-import { MessageService } from './message.service';
 import * as $ from 'jquery';
 import 'jquery-ui/ui/widgets/draggable';
-import { Store, select } from '@ngrx/store';
-import * as fromDevice from './';
+import { Store } from '@ngrx/store';
+import * as fromDevice from './ngrx';
 import { Observable } from 'rxjs';
-import { Feed, Pet, SaveMood, ChangeMessages } from './device.actions';
-import { eatingState, GalState } from '../../model/gal-state.model';
+import { Feed, Pet, SaveMood, ChangeMessages } from './ngrx/device.actions';
+import { eating, GalMood } from '../../model/gal-state.model';
 import { exhaustMap } from 'rxjs/operators';
 
 @Component({
@@ -17,14 +14,14 @@ import { exhaustMap } from 'rxjs/operators';
   styleUrls: ['./device.component.css']
 })
 export class DeviceComponent implements OnInit {
-  states$: Observable<GalState>;
+  moods$: Observable<GalMood>;
   messages$: Observable<String>;
-  eating = eatingState;
-  constructor(private store: Store<fromDevice.AppState>, public messageService: MessageService) { }
+  eating = eating;
+  constructor(private store: Store<fromDevice.AppState>) { }
 
   ngOnInit(): void {
-    this.states$ = this.store.select(fromDevice.selectTimedStates, 6000).pipe(exhaustMap(streamState => streamState));
-    this.messages$ = this.store.select(fromDevice.selectTimedMessages, 3000).pipe(exhaustMap(streamMessage => streamMessage));
+    this.moods$ = this.store.select(fromDevice.selectTimedGalMoods, 6000).pipe(exhaustMap(moodsStream => moodsStream));
+    this.messages$ = this.store.select(fromDevice.selectTimedMessages, 3000).pipe(exhaustMap(messagesStream => messagesStream));
     this.store.dispatch(new ChangeMessages(['Welcome!', 'More info on the left', 'Feed me on the right', '']));
 
     ($('#device') as any).draggable();
@@ -32,6 +29,7 @@ export class DeviceComponent implements OnInit {
 
   pet(): void {
     this.store.dispatch(new Pet);
+    this.store.dispatch(new SaveMood('pet'));
   }
 
   eat(): void {

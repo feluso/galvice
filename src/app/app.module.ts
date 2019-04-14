@@ -22,10 +22,10 @@ import { PhonePipe } from './common/phone.pipe';
 import { GalStateService } from './device/gal-state.service';
 import { MessageService } from './device/message.service';
 import { Data } from './http/data.service';
-import { deviceReduce } from './device/device.reducers';
+import { deviceReduce } from './device/ngrx/device.reducers';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { DeviceEffects } from './device/device.effects';
+import { DeviceEffects } from './device/ngrx/device.effects';
 
 const routes: Routes = [
   { path: 'info', component: InfoComponent, outlet: 'popup' },

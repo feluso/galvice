@@ -2,8 +2,8 @@
   <div class="screen">
     <div class="textContainer">{{(messages$ | async)}}</div>
 
-    <img id="at" [src]="(states$ | async)?.imgUrl" alt="" (click)="pet()">
-    <img *ngIf="(states$ | async) == eating" id="meat" src="assets/images/meat.gif">
+    <img id="at" [src]="(moods$ | async)?.imgUrl" alt="" (click)="pet()">
+    <img *ngIf="(moods$ | async) == eating" id="meat" src="assets/images/meat.gif">
   </div>
   <div class="btnVice">
 

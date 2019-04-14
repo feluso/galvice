@@ -5,8 +5,8 @@ export enum ActionTypes {
     Feed = '[Device] Feed',
     Pet = '[Device] Eat',
     ChangeMessage = '[Device] Change message',
-    SaveMood = '[Device] Save times got into mood',
-    SaveMoodSucceeded = '[Device] Succesfully Ate'
+    SaveGalAction = '[Device] Save times got into mood',
+    SaveGalActionSucceeded = '[Device] Succesfully Ate'
 }
 
 export class Feed implements Action {
@@ -27,13 +27,13 @@ export class ChangeMessages implements Action {
 }
 
 export class SaveMood implements Action {
-    readonly type = ActionTypes.SaveMood;
+    readonly type = ActionTypes.SaveGalAction;
     public constructor(public payload: String) {}
 }
-
+ 
 export class SaveMoodSucceeded implements Action {
-    readonly type = ActionTypes.SaveMoodSucceeded;
-    public constructor(public payload: Number) {}
+    readonly type = ActionTypes.SaveGalActionSucceeded;
+    public constructor(public payload: {description: String, timesActionRealized: Number}) {}
 }
 
 export type Union = Feed | Pet | Idle | SaveMood | SaveMoodSucceeded | ChangeMessages;

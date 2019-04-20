@@ -9,12 +9,28 @@ import { Experience } from '../../model/experience.model';
 import { Contact } from '../../model/contact.model';
 import { environment } from '../../environments/environment';
 
+export enum FetchableInfo {
+    SKILLS,
+    ME,
+    SOCIAL_MEDIA,
+    EXPERIENCE
+}
+
 @Injectable()
 export class DataRetrieval {
 
     readonly url: String = environment.backendUrl;
 
     constructor(private http: HttpClient) { }
+
+    get(fetchableInfo: FetchableInfo): Observable<any> {
+        switch(fetchableInfo) {
+            case FetchableInfo.SKILLS: return this.getSkills();
+            case FetchableInfo.ME: return this.getMe();
+            case FetchableInfo.SOCIAL_MEDIA: return this.getSocialMedia();
+            case FetchableInfo.EXPERIENCE: return this.getExperience();
+        }
+    }
 
 
     getSkills(): Observable<Skill[]> {

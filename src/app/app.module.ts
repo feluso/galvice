@@ -26,6 +26,8 @@ import { deviceReduce } from './device/ngrx/device.reducers';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { DeviceEffects } from './device/ngrx/device.effects';
+import { menuReduce } from './menu/ngrx';
+import { MenuEffects } from './menu/ngrx/menu.effects';
 
 const routes: Routes = [
   { path: 'info', component: InfoComponent, outlet: 'popup' },
@@ -52,8 +54,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    StoreModule.forRoot({device: deviceReduce}),
-    EffectsModule.forRoot([DeviceEffects]),
+    StoreModule.forRoot({device: deviceReduce, menu: menuReduce}),
+    EffectsModule.forRoot([DeviceEffects, MenuEffects]),
     HttpClientModule,
     ReactiveFormsModule
   ],

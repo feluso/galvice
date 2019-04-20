@@ -1,15 +1,18 @@
 import { Action } from '@ngrx/store';
 import { Experience } from '../../../model/experience.model';
+import { SocialMedia } from '../../../model/social-media.model';
+import { Skill } from '../../../model/skill.model';
+import { Me } from '../../../model/me.model';
 
 export enum ActionTypes {
     LoadExperience = '[Menu] Load experience',
     LoadSkills = '[Menu] Load skills',
     LoadSocialMedia = '[Menu] Load social media',
     LoadMeAbout = '[Menu] Load me information',
-    Loaded = '[Menu] Loaded information successfully',
     ExperienceLoaded = '[Menu] Experience loaded successfully',
-    ExtraInfoLoaded = '[Menu] Extra Info loaded successfully',
-    AboutLoaded = '[Menu] About loaded successfully',
+    SocialMediaLoaded = '[Menu] Social Media loaded successfully',
+    SkillsLoaded = '[Menu] Skills loaded successfully',
+    MeAboutLoaded = '[Menu] About loaded successfully',
     ErrorLoading = '[Menu] Error loading information',
 }
 
@@ -18,12 +21,19 @@ export class ExperienceLoaded implements Action {
     constructor(public payload: Experience[]) {}
 }
 
-export class ExtraInfoLoaded implements Action {
-    readonly type = ActionTypes.ExtraInfoLoaded;
+export class SocialMediaLoaded implements Action {
+    readonly type = ActionTypes.SocialMediaLoaded;
+    constructor(public payload: SocialMedia[]) {}
 }
 
-export class AboutLoaded implements Action {
-    readonly type = ActionTypes.AboutLoaded;
+export class SkillsLoaded implements Action {
+    readonly type = ActionTypes.SkillsLoaded;
+    constructor(public payload: Skill[]) {}
+}
+
+export class MeAboutLoaded implements Action {
+    readonly type = ActionTypes.MeAboutLoaded;
+    constructor(public payload: Me) {}
 }
 
 export class ErrorLoading implements Action {
@@ -34,8 +44,13 @@ export class LoadExperience implements Action {
     readonly type = ActionTypes.LoadExperience;
 }
 
-export class Loaded implements Action{
-    readonly type = ActionTypes.LoadExperience;
+export class LoadSocialMedia implements Action {
+    readonly type = ActionTypes.LoadSocialMedia;
 }
 
-export type Union = ExperienceLoaded | ExtraInfoLoaded | AboutLoaded | ErrorLoading;
+
+export class LoadMeAbout implements Action {
+    readonly type = ActionTypes.LoadMeAbout;
+}
+
+export type Union = ExperienceLoaded | SocialMediaLoaded | SkillsLoaded | MeAboutLoaded | ErrorLoading;

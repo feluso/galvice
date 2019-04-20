@@ -2,9 +2,9 @@
   <div id="contact" class="basic-modal">
     <app-title-modal [title]="this"> </app-title-modal>
     <div class="modal-info">
-        {{this.data.me.number | phone}} <br>
-        {{this.data.me.email}} <br>
-      <div *ngFor="let socialSite of this.data.socialMedia">
+        {{(phone$ | async) | phone}} <br>
+        {{(email$ | async)}} <br>
+      <div *ngFor="let socialSite of (socialMedia$ | async)">
         <img class="small-icon"[src]=socialSite.icon> 
         <a [href]="socialSite.user" target="_blank">{{socialSite.platform}}</a>
       </div>

@@ -12,8 +12,7 @@ export class AppComponent implements OnInit {
   constructor(private data: Data) {}
 
   ngOnInit(): void {
-    this.data.fetch();
-}
+  }
 
 
 }

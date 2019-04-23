@@ -28,8 +28,6 @@ export class ExtraInfoComponent implements OnInit, Title {
 
   ngOnInit() {
     ($('#contact') as any).draggable();
-    this.store.dispatch(new LoadSocialMedia);
-    this.store.dispatch(new LoadMeAbout);
     this.socialMedia$ = this.store.select(fromMenu.selectSocialMedia);
     this.phone$ = this.store.select(fromMenu.selectPhone);
     this.email$ = this.store.select(fromMenu.selectEmail);

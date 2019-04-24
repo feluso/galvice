@@ -48,9 +48,12 @@ export class LoadSocialMedia implements Action {
     readonly type = ActionTypes.LoadSocialMedia;
 }
 
-
 export class LoadMeAbout implements Action {
     readonly type = ActionTypes.LoadMeAbout;
+}
+
+export class LoadSkills implements Action {
+    readonly type = ActionTypes.LoadSkills;
 }
 
 export type Union = ExperienceLoaded | SocialMediaLoaded | SkillsLoaded | MeAboutLoaded | ErrorLoading;

@@ -4,7 +4,7 @@ import * as $ from 'jquery';
 import { Title } from '../../../model/title.interface';
 
 
-enum tab { ABOUT, SKILLS, EXPERIENCE }
+export enum tab { ABOUT, SKILLS, EXPERIENCE }
 @Component({
   selector: 'app-info',
   templateUrl: './info.component.html',
@@ -13,7 +13,6 @@ enum tab { ABOUT, SKILLS, EXPERIENCE }
 export class InfoComponent implements OnInit, Title {
   title: String;
   closeRoute = [{outlets: {popup: null}}];
-
   public tab = tab;
   public tabToExpand: tab = tab.ABOUT;
 

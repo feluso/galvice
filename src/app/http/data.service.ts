@@ -27,6 +27,7 @@ export class Data {
             this.data.getSkills().subscribe(
                 (skills: Skill[]) => {
                     this.skills = skills;
+                    console.log(skills);
                 }
             );
         }

@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
   templateUrl: './skills-tab.component.html',
   styleUrls: ['./skills-tab.component.css']
 })
-export class InfoTabComponent implements OnInit {
+export class SkillsTabComponent implements OnInit {
   skills: Skill[];
 
   constructor(public store: Store<fromMenu.AppState>) { }

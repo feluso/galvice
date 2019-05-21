@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { RouterModule, Routes } from '@angular/router';
 import { InfoComponent } from './menu/info/info.component';
-import { InfoTabComponent } from './menu/info/skills-tab/skills-tab.component';
+import { SkillsTabComponent } from './menu/info/skills-tab/skills-tab.component';
 import { SkillItemComponent } from './menu/info/skills-tab/skill-item/skill-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DataRetrieval } from './http/data-retrieval.service';
@@ -40,7 +40,7 @@ const routes: Routes = [
     AppComponent,
     MenuComponent,
     InfoComponent,
-    InfoTabComponent,
+    SkillsTabComponent,
     SkillItemComponent,
     AboutTabComponent,
     ContactTabComponent,

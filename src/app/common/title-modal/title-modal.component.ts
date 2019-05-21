@@ -7,14 +7,10 @@ import { Title } from '../../../model/title.interface';
   templateUrl: './title-modal.component.html',
   styleUrls: ['./title-modal.component.css']
 })
-export class TitleModalComponent implements OnInit {
-
+export class TitleModalComponent {
   @Input() title: Title;
 
   constructor(private router: Router) { }
-
-  ngOnInit() {
-  }
 
   navigateTo(): void {
     this.router.navigate(

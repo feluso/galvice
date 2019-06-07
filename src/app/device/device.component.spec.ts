@@ -1,13 +1,13 @@
-import { async, ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync, tick, discardPeriodicTasks, flush, flushMicrotasks } from '@angular/core/testing';
 
 import { DeviceComponent } from './device.component';
 import { Component } from '@angular/core';
 import { Store, StoreModule, combineReducers } from '@ngrx/store';
-import { GalMood, idle, happy, eating } from '../../model/gal-state.model';
-import { provideMockStore } from '@ngrx/store/testing';
-import { last, first } from 'rxjs/operators';
+import { idle, happy, eating, GalMood } from '../../model/gal-state.model';
+import { first } from 'rxjs/operators';
 import * as fromDevice from '../device/ngrx';
 import { Pet, SaveMood, Feed } from '../device/ngrx';
+import { Observable, timer, from, pipe } from 'rxjs';
 
 @Component({selector: 'router-outlet', template: ''})
 class RouterStubComponent {}
@@ -66,13 +66,44 @@ describe('DeviceComponent', () => {
     expect(store.dispatch).toHaveBeenCalledWith(petAction);
   });
 
-  it('should change mood to pet when pet is dispatched', () => {
+  it('should change mood to happy when pet is dispatched', () => {
     const petAction = new Pet();
     store.dispatch(petAction);
-
-    component.moods$.subscribe(moods => {
-      expect(moods.imgUrl).toBe(happy.imgUrl);
-    })
+    component.moods$.subscribe(moods => expect(moods.imgUrl).toBe(happy.imgUrl));
   });
+
+
+  it('should change mood to eat when eat is dispatched', () => {
+    const feedAction = new Feed();  
+    store.dispatch(feedAction);
+    component.moods$.subscribe(moods => expect(moods.imgUrl).toBe(eating.imgUrl));
+  });
+
+  it('should delay the stream of moods', fakeAsync(() => {
+
+    const stateToDelay = {device: {
+      name: 'test',
+      moods: [happy, eating, idle],
+      messages: []
+    }};
+
+    const observableMoods = fromDevice.selectObservableGalMoods.projector(stateToDelay.device.moods);
+    const delayed = fromDevice.selectTimedGalMoods.projector(observableMoods, 50);
+    let actualMood;
+    delayed.subscribe(mood => {
+      actualMood = mood;
+    }
+    );
+    tick();
+    expect(actualMood.imgUrl).toBe(happy.imgUrl);
+    tick(50);
+    expect(actualMood.imgUrl).toBe(eating.imgUrl);
+    tick(50);
+    expect(actualMood.imgUrl).toBe(idle.imgUrl);
+
+      
+  }));
+
+
 
 });

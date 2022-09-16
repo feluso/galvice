@@ -25,7 +25,7 @@
     "@ngrx/store": "^7.4.0",
     "@types/jquery": "^3.3.28",
     "@types/jqueryui": "^1.12.6",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.3.1",
     "core-js": "^2.4.1",
     "jquery": "^3.3.1",
     "jquery-ui": "^1.12.1",
